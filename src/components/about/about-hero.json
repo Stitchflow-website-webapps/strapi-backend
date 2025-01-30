@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_about_heroes",
+  "info": {
+    "displayName": "About Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "AboutHeading": {
+      "type": "richtext",
+      "required": true
+    },
+    "AboutDescription": {
+      "type": "text"
+    },
+    "AboutHeroLogo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

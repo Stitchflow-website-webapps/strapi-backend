@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_call_schedule_demos",
+  "info": {
+    "displayName": "Call Schedule Demo"
+  },
+  "options": {},
+  "attributes": {
+    "CallScheuleHeading": {
+      "type": "string"
+    },
+    "CallScheduleDescription": {
+      "type": "text"
+    },
+    "ScheduleButton": {
+      "displayName": "Call Schedule Button",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-schedule-button"
+    }
+  }
+}
