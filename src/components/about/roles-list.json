@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_about_roles_lists",
+  "info": {
+    "displayName": "Roles List",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "RolesListHeading": {
+      "type": "string"
+    },
+    "RolesListLocation": {
+      "type": "string"
+    },
+    "RolesListImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "RolesLink": {
+      "type": "string"
+    }
+  }
+}
