@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_home_home_manual_secs",
+  "info": {
+    "displayName": "HomeManualSec"
+  },
+  "options": {},
+  "attributes": {
+    "ManualSecHeading": {
+      "type": "text"
+    },
+    "ManualSecTitle1": {
+      "type": "text"
+    },
+    "ManualSecTitle2": {
+      "type": "text"
+    },
+    "ManualSecTitle3": {
+      "type": "text"
+    },
+    "ManualOktaImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ManualSecOkta2Img": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ManualSecKandjiImg": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ManualSecZoomImg": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
