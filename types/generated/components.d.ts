@@ -77,31 +77,6 @@ export interface AboutValueSection extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedCallScheduleButton extends Struct.ComponentSchema {
-  collectionName: 'components_shared_call_schedule_buttons';
-  info: {
-    description: '';
-    displayName: 'Call Schedule Button';
-  };
-  attributes: {
-    ButtonLink: Schema.Attribute.String;
-    ButtonText: Schema.Attribute.String;
-  };
-}
-
-export interface SharedCallScheduleDemo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_call_schedule_demos';
-  info: {
-    displayName: 'Call Schedule Demo';
-  };
-  attributes: {
-    CallScheduleDescription: Schema.Attribute.Text;
-    CallScheuleHeading: Schema.Attribute.String;
-    ScheduleButton: Schema.Attribute.Component<
-      'shared.call-schedule-button',
-      false
-    >;
-  
 export interface FooterFooterLinks extends Struct.ComponentSchema {
   collectionName: 'components_footer_footer_links';
   info: {
@@ -304,6 +279,33 @@ export interface SharedBenifitCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCallScheduleButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_call_schedule_buttons';
+  info: {
+    description: '';
+    displayName: 'Call Schedule Button';
+  };
+  attributes: {
+    ButtonLink: Schema.Attribute.String;
+    ButtonText: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCallScheduleDemo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_call_schedule_demos';
+  info: {
+    displayName: 'Call Schedule Demo';
+  };
+  attributes: {
+    CallScheduleDescription: Schema.Attribute.Text;
+    CallScheuleHeading: Schema.Attribute.String;
+    ScheduleButton: Schema.Attribute.Component<
+      'shared.call-schedule-button',
+      false
+    >;
+  };
+}
+
 export interface SharedHomeActionCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_action_cards';
   info: {
@@ -409,12 +411,6 @@ declare module '@strapi/strapi' {
       'about.about-values': AboutAboutValues;
       'about.roles-list': AboutRolesList;
       'about.value-section': AboutValueSection;
-      'shared.call-schedule-button': SharedCallScheduleButton;
-      'shared.call-schedule-demo': SharedCallScheduleDemo;
-      'shared.media': SharedMedia;
-      'shared.quote': SharedQuote;
-      'shared.rich-text': SharedRichText;
-      'shared.schedule-button-images': SharedScheduleButtonImages;
       'footer.footer-links': FooterFooterLinks;
       'footer.social-media': FooterSocialMedia;
       'header.header-company': HeaderHeaderCompany;
@@ -431,11 +427,14 @@ declare module '@strapi/strapi' {
       'home.home-pricing-sec': HomeHomePricingSec;
       'home.home-stich-works': HomeHomeStichWorks;
       'shared.benifit-card': SharedBenifitCard;
+      'shared.call-schedule-button': SharedCallScheduleButton;
+      'shared.call-schedule-demo': SharedCallScheduleDemo;
       'shared.home-action-card': SharedHomeActionCard;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
+      'shared.schedule-button-images': SharedScheduleButtonImages;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
     }
