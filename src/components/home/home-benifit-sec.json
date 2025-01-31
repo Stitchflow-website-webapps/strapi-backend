@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_home_home_benifit_secs",
+  "info": {
+    "displayName": "HomeBenifitSec"
+  },
+  "options": {},
+  "attributes": {
+    "BenifitSecHeading": {
+      "type": "text"
+    }
+  }
+}

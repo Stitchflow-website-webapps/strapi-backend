@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_header_header_logos",
+  "info": {
+    "displayName": "HeaderLogo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "HeaderLogoIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "HeaderLogoImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "HeaderLogoLink": {
+      "type": "string"
+    }
+  }
+}

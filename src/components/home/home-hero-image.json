@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_home_home_hero_images",
+  "info": {
+    "displayName": "HomeHeroImage"
+  },
+  "options": {},
+  "attributes": {
+    "HeroImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "HeroMobileImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "HeroPlayIcon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "HeroImageLink": {
+      "type": "string"
+    }
+  }
+}
