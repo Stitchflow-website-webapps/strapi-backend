@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_home_precise_secs",
+  "info": {
+    "displayName": "HomePreciseSec"
+  },
+  "options": {},
+  "attributes": {
+    "PreciseImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "PreciseHeading": {
+      "type": "text"
+    },
+    "PreciseTitle1": {
+      "type": "text"
+    },
+    "PreciseTitle2": {
+      "type": "text"
+    },
+    "PreciseTitle3": {
+      "type": "text"
+    }
+  }
+}

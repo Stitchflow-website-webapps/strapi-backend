@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_home_action_cards",
+  "info": {
+    "displayName": "HomeActionCard"
+  },
+  "options": {},
+  "attributes": {
+    "ActionIcon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ActionTitle": {
+      "type": "text"
+    },
+    "ActionContent": {
+      "type": "blocks"
+    }
+  }
+}

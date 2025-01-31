@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_benifit_cards",
+  "info": {
+    "displayName": "HomeBenifitCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "IconImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "CardTitle": {
+      "type": "text"
+    },
+    "CardContent1": {
+      "type": "text"
+    },
+    "CardContent2": {
+      "type": "text"
+    },
+    "CardContent3": {
+      "type": "text"
+    }
+  }
+}
