@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_platform_feature_secs",
+  "info": {
+    "displayName": "FeatureSec"
+  },
+  "options": {},
+  "attributes": {
+    "FeatureHeading": {
+      "type": "string"
+    },
+    "FeatureTitle": {
+      "type": "text"
+    }
+  }
+}

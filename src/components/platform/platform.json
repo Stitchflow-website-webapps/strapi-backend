@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_platform_platforms",
+  "info": {
+    "displayName": "Platform"
+  },
+  "options": {},
+  "attributes": {
+    "HeroTitle": {
+      "type": "string"
+    },
+    "HeroDescription": {
+      "type": "text"
+    }
+  }
+}

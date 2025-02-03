@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_integration_integrations",
+  "info": {
+    "displayName": "Integration",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "HeroHeading": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ScheduleSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.schedule-button-with-arrow"
+    },
+    "BannerImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

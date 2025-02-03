@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_security_security_sub_processors",
+  "info": {
+    "displayName": "SecuritySubProcessor"
+  },
+  "options": {},
+  "attributes": {
+    "ProcessorHeading": {
+      "type": "string"
+    },
+    "TickIcon1": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content1": {
+      "type": "string"
+    },
+    "TickIcon2": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content2": {
+      "type": "string"
+    },
+    "TickIcon3": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content3": {
+      "type": "string"
+    },
+    "TickIcon4": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content4": {
+      "type": "string"
+    },
+    "TickIcon5": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content5": {
+      "type": "string"
+    }
+  }
+}

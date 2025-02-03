@@ -31,11 +31,6 @@
     },
     "ScheduleLink": {
       "type": "string"
-    },
-    "HeroImageSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "home.home-hero-image"
     }
   }
 }
