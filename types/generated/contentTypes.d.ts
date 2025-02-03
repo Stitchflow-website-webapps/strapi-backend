@@ -619,6 +619,34 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
+  collectionName: 'integrations';
+  info: {
+    displayName: 'Integration';
+    pluralName: 'integrations';
+    singularName: 'integration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'integration.integration', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::integration.integration'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
@@ -646,6 +674,34 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::navbar.navbar'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
+  collectionName: 'platforms';
+  info: {
+    displayName: 'Platform';
+    pluralName: 'platforms';
+    singularName: 'platform';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'platform.platform', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::platform.platform'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -684,6 +740,51 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSecuritySecurity extends Struct.SingleTypeSchema {
+  collectionName: 'securities';
+  info: {
+    description: '';
+    displayName: 'Security';
+    pluralName: 'securities';
+    singularName: 'security';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FeatureSec: Schema.Attribute.Component<
+      'security.security-feature-sec',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::security.security'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SecurityCardSec: Schema.Attribute.Component<
+      'security.security-after-hero-sec',
+      true
+    >;
+    SecurityHeroSection: Schema.Attribute.Component<'security.security', false>;
+    SecurityProcessorSec: Schema.Attribute.Component<
+      'security.security-sub-processor',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WhitePaperSec: Schema.Attribute.Component<
+      'security.white-paper-sec',
+      false
+    >;
   };
 }
 
@@ -1203,8 +1304,11 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
+      'api::integration.integration': ApiIntegrationIntegration;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::platform.platform': ApiPlatformPlatform;
       'api::resource.resource': ApiResourceResource;
+      'api::security.security': ApiSecuritySecurity;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

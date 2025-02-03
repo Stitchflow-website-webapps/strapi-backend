@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_security_security_after_hero_secs",
+  "info": {
+    "displayName": "SecurityAfterHeroSec"
+  },
+  "options": {},
+  "attributes": {
+    "CardTitle": {
+      "type": "string"
+    },
+    "TickIcon": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content1": {
+      "type": "string"
+    },
+    "TickIcon2": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content2": {
+      "type": "string"
+    },
+    "Content3": {
+      "type": "string"
+    },
+    "TickIcon3": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_security_security_feature_secs",
+  "info": {
+    "displayName": "SecurityFeatureSec",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "FeatureSecHeading": {
+      "type": "text"
+    },
+    "LinkText": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Dot": {
+      "type": "string"
+    }
+  }
+}
