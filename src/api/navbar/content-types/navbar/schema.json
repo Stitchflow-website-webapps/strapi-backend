@@ -4,7 +4,8 @@
   "info": {
     "singularName": "navbar",
     "pluralName": "navbars",
-    "displayName": "Navbar"
+    "displayName": "Navbar",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,6 +31,11 @@
       "type": "component",
       "repeatable": true,
       "component": "header.header-links"
+    },
+    "HeaderCallScheduleSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-schedule-button"
     }
   }
 }
