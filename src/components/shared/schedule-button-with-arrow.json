@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_shared_schedule_button_with_arrows",
+  "info": {
+    "displayName": "ScheduleButtonWithArrow",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ArrowImage1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "ScheduleSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-schedule-button"
+    },
+    "ArrowImage2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "ScheduleLink": {
+      "type": "string"
+    },
+    "HeroImageSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-hero-image"
+    }
+  }
+}

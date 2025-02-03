@@ -215,6 +215,7 @@ export interface HomeHomeManualSec extends Struct.ComponentSchema {
 export interface HomeHomePage extends Struct.ComponentSchema {
   collectionName: 'components_home_home_pages';
   info: {
+    description: '';
     displayName: 'HomePage';
   };
   attributes: {
@@ -264,6 +265,32 @@ export interface HomeHomeStichWorks extends Struct.ComponentSchema {
   };
 }
 
+export interface ResourceResource extends Struct.ComponentSchema {
+  collectionName: 'components_resource_resources';
+  info: {
+    displayName: 'Resource';
+  };
+  attributes: {
+    ResourceDescription: Schema.Attribute.Text;
+    ResourceHeading: Schema.Attribute.Text;
+  };
+}
+
+export interface ResourceResourceAfterHeroSec extends Struct.ComponentSchema {
+  collectionName: 'components_resource_resource_after_hero_secs';
+  info: {
+    displayName: 'ResourceAfterHeroSec';
+  };
+  attributes: {
+    BlogLink: Schema.Attribute.String;
+    CaseStudyLink: Schema.Attribute.String;
+    CaseStudyText: Schema.Attribute.String;
+    ResourceBlogIcon: Schema.Attribute.Media<'images' | 'files'>;
+    ResourceBlogText: Schema.Attribute.String;
+    ResourceCaseStudyIcon: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
 export interface SharedBenifitCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_benifit_cards';
   info: {
@@ -294,13 +321,14 @@ export interface SharedCallScheduleButton extends Struct.ComponentSchema {
 export interface SharedCallScheduleDemo extends Struct.ComponentSchema {
   collectionName: 'components_shared_call_schedule_demos';
   info: {
+    description: '';
     displayName: 'Call Schedule Demo';
   };
   attributes: {
     CallScheduleDescription: Schema.Attribute.Text;
     CallScheuleHeading: Schema.Attribute.String;
-    ScheduleButton: Schema.Attribute.Component<
-      'shared.call-schedule-button',
+    ScheduleButtonSec: Schema.Attribute.Component<
+      'shared.schedule-button-with-arrow',
       false
     >;
   };
@@ -375,6 +403,24 @@ export interface SharedScheduleButtonImages extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedScheduleButtonWithArrow extends Struct.ComponentSchema {
+  collectionName: 'components_shared_schedule_button_with_arrows';
+  info: {
+    description: '';
+    displayName: 'ScheduleButtonWithArrow';
+  };
+  attributes: {
+    ArrowImage1: Schema.Attribute.Media<'images' | 'files'>;
+    ArrowImage2: Schema.Attribute.Media<'images' | 'files'>;
+    HeroImageSection: Schema.Attribute.Component<'home.home-hero-image', false>;
+    ScheduleLink: Schema.Attribute.String;
+    ScheduleSec: Schema.Attribute.Component<
+      'shared.call-schedule-button',
+      false
+    >;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -426,6 +472,8 @@ declare module '@strapi/strapi' {
       'home.home-precise-sec': HomeHomePreciseSec;
       'home.home-pricing-sec': HomeHomePricingSec;
       'home.home-stich-works': HomeHomeStichWorks;
+      'resource.resource': ResourceResource;
+      'resource.resource-after-hero-sec': ResourceResourceAfterHeroSec;
       'shared.benifit-card': SharedBenifitCard;
       'shared.call-schedule-button': SharedCallScheduleButton;
       'shared.call-schedule-demo': SharedCallScheduleDemo;
@@ -435,6 +483,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.schedule-button-images': SharedScheduleButtonImages;
+      'shared.schedule-button-with-arrow': SharedScheduleButtonWithArrow;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
     }
