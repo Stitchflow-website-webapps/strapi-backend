@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_home_home_pricing_secs",
+  "info": {
+    "displayName": "HomePricingSec"
+  },
+  "options": {},
+  "attributes": {
+    "PricingHeading": {
+      "type": "text"
+    },
+    "PricingExecutiveImg": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "PricingAppImg": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "PricingBillableImg": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

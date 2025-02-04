@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_resource_resources",
+  "info": {
+    "displayName": "Resource"
+  },
+  "options": {},
+  "attributes": {
+    "ResourceHeading": {
+      "type": "text"
+    },
+    "ResourceDescription": {
+      "type": "text"
+    }
+  }
+}

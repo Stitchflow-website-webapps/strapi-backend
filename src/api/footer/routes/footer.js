@@ -1,10 +1,9 @@
 'use strict';
 
 /**
- * about router
+ * footer router
  */
 
-// @ts-ignore
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::about.about');
+module.exports = createCoreRouter('api::footer.footer');

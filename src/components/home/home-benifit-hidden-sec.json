@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_home_benifit_hidden_secs",
+  "info": {
+    "displayName": "HomeBenifitHiddenSec"
+  },
+  "options": {},
+  "attributes": {
+    "HiddenIcon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "HiddenTitle": {
+      "type": "text"
+    },
+    "HiddenContent1": {
+      "type": "text"
+    },
+    "HiddenContent2": {
+      "type": "text"
+    }
+  }
+}

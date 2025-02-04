@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_security_white_paper_secs",
+  "info": {
+    "displayName": "WhitePaperSec",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "WhitePaperHeading": {
+      "type": "string"
+    },
+    "DownloadTitle": {
+      "type": "string"
+    },
+    "ArrowIcon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "DownloadLink": {
+      "type": "string"
+    }
+  }
+}

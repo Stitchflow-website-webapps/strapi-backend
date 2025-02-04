@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_about_roles",
+  "info": {
+    "displayName": "About Roles",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Rolestittle": {
+      "type": "string"
+    },
+    "RolesHeading": {
+      "type": "string"
+    },
+    "RolesList": {
+      "displayName": "RolesList",
+      "type": "component",
+      "repeatable": true,
+      "component": "about.roles-list"
+    }
+  }
+}

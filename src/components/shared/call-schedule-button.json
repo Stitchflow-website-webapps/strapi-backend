@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_call_schedule_buttons",
+  "info": {
+    "displayName": "Call Schedule Button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ButtonText": {
+      "type": "string"
+    },
+    "ButtonLink": {
+      "type": "string"
+    }
+  }
+}

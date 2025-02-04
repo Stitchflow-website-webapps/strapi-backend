@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_plat_feature_images",
+  "info": {
+    "displayName": "PlatFeatureImage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "PlatIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "PlatIconTitle": {
+      "type": "string"
+    },
+    "ContentTitle": {
+      "type": "text"
+    },
+    "ContentLink": {
+      "type": "string"
+    },
+    "ContentImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

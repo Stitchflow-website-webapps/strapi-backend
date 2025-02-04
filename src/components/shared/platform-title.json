@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_platform_titles",
+  "info": {
+    "displayName": "PlatformTitle"
+  },
+  "options": {},
+  "attributes": {
+    "PlatformTitle": {
+      "type": "text"
+    }
+  }
+}

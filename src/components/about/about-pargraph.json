@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_about_about_pargraphs",
+  "info": {
+    "displayName": "About Pargraph",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "AboutParagraph": {
+      "type": "richtext"
+    }
+  }
+}

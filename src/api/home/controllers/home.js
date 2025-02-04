@@ -1,10 +1,9 @@
 'use strict';
 
 /**
- * about controller
+ * home controller
  */
 
-// @ts-ignore
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::about.about');
+module.exports = createCoreController('api::home.home');
