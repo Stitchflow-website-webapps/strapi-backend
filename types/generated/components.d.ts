@@ -215,6 +215,7 @@ export interface HomeHomeManualSec extends Struct.ComponentSchema {
 export interface HomeHomePage extends Struct.ComponentSchema {
   collectionName: 'components_home_home_pages';
   info: {
+    description: '';
     displayName: 'HomePage';
   };
   attributes: {
@@ -264,6 +265,149 @@ export interface HomeHomeStichWorks extends Struct.ComponentSchema {
   };
 }
 
+export interface IntegrationIntegration extends Struct.ComponentSchema {
+  collectionName: 'components_integration_integrations';
+  info: {
+    description: '';
+    displayName: 'Integration';
+  };
+  attributes: {
+    BannerImage: Schema.Attribute.Media<'images' | 'files'>;
+    Description: Schema.Attribute.Text;
+    HeroHeading: Schema.Attribute.Text;
+    ScheduleSec: Schema.Attribute.Component<
+      'shared.schedule-button-with-arrow',
+      false
+    >;
+  };
+}
+
+export interface PlatformFeatureSec extends Struct.ComponentSchema {
+  collectionName: 'components_platform_feature_secs';
+  info: {
+    displayName: 'FeatureSec';
+  };
+  attributes: {
+    FeatureHeading: Schema.Attribute.String;
+    FeatureTitle: Schema.Attribute.Text;
+  };
+}
+
+export interface PlatformPlatform extends Struct.ComponentSchema {
+  collectionName: 'components_platform_platforms';
+  info: {
+    displayName: 'Platform';
+  };
+  attributes: {
+    HeroDescription: Schema.Attribute.Text;
+    HeroTitle: Schema.Attribute.String;
+  };
+}
+
+export interface ResourceResource extends Struct.ComponentSchema {
+  collectionName: 'components_resource_resources';
+  info: {
+    displayName: 'Resource';
+  };
+  attributes: {
+    ResourceDescription: Schema.Attribute.Text;
+    ResourceHeading: Schema.Attribute.Text;
+  };
+}
+
+export interface ResourceResourceAfterHeroSec extends Struct.ComponentSchema {
+  collectionName: 'components_resource_resource_after_hero_secs';
+  info: {
+    displayName: 'ResourceAfterHeroSec';
+  };
+  attributes: {
+    BlogLink: Schema.Attribute.String;
+    CaseStudyLink: Schema.Attribute.String;
+    CaseStudyText: Schema.Attribute.String;
+    ResourceBlogIcon: Schema.Attribute.Media<'images' | 'files'>;
+    ResourceBlogText: Schema.Attribute.String;
+    ResourceCaseStudyIcon: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface SecuritySecurity extends Struct.ComponentSchema {
+  collectionName: 'components_security_securities';
+  info: {
+    displayName: 'Security';
+  };
+  attributes: {
+    CCPAImage: Schema.Attribute.Media<'images' | 'files'>;
+    GDPRImage: Schema.Attribute.Media<'images' | 'files'>;
+    SecurityDescription: Schema.Attribute.String;
+    SecurityHeading: Schema.Attribute.String;
+    SOCImage: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface SecuritySecurityAfterHeroSec extends Struct.ComponentSchema {
+  collectionName: 'components_security_security_after_hero_secs';
+  info: {
+    displayName: 'SecurityAfterHeroSec';
+  };
+  attributes: {
+    CardTitle: Schema.Attribute.String;
+    Content1: Schema.Attribute.String;
+    Content2: Schema.Attribute.String;
+    Content3: Schema.Attribute.String;
+    TickIcon: Schema.Attribute.Media<'files' | 'images'>;
+    TickIcon2: Schema.Attribute.Media<'images' | 'files'>;
+    TickIcon3: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface SecuritySecurityFeatureSec extends Struct.ComponentSchema {
+  collectionName: 'components_security_security_feature_secs';
+  info: {
+    description: '';
+    displayName: 'SecurityFeatureSec';
+  };
+  attributes: {
+    Dot: Schema.Attribute.String;
+    FeatureSecHeading: Schema.Attribute.Text;
+    Link: Schema.Attribute.String;
+    LinkText: Schema.Attribute.String;
+  };
+}
+
+export interface SecuritySecuritySubProcessor extends Struct.ComponentSchema {
+  collectionName: 'components_security_security_sub_processors';
+  info: {
+    displayName: 'SecuritySubProcessor';
+  };
+  attributes: {
+    Content1: Schema.Attribute.String;
+    Content2: Schema.Attribute.String;
+    Content3: Schema.Attribute.String;
+    Content4: Schema.Attribute.String;
+    Content5: Schema.Attribute.String;
+    ProcessorHeading: Schema.Attribute.String;
+    TickIcon1: Schema.Attribute.Media<'images' | 'files'>;
+    TickIcon2: Schema.Attribute.Media<'images' | 'files'>;
+    TickIcon3: Schema.Attribute.Media<'images' | 'files'>;
+    TickIcon4: Schema.Attribute.Media<'images' | 'files'>;
+    TickIcon5: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface SecurityWhitePaperSec extends Struct.ComponentSchema {
+  collectionName: 'components_security_white_paper_secs';
+  info: {
+    description: '';
+    displayName: 'WhitePaperSec';
+  };
+  attributes: {
+    ArrowIcon: Schema.Attribute.Media<'images' | 'files'>;
+    DownloadLink: Schema.Attribute.String;
+    DownloadTitle: Schema.Attribute.String;
+    WhitePaperHeading: Schema.Attribute.String;
+  };
+}
+
 export interface SharedBenifitCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_benifit_cards';
   info: {
@@ -294,13 +438,14 @@ export interface SharedCallScheduleButton extends Struct.ComponentSchema {
 export interface SharedCallScheduleDemo extends Struct.ComponentSchema {
   collectionName: 'components_shared_call_schedule_demos';
   info: {
+    description: '';
     displayName: 'Call Schedule Demo';
   };
   attributes: {
     CallScheduleDescription: Schema.Attribute.Text;
     CallScheuleHeading: Schema.Attribute.String;
-    ScheduleButton: Schema.Attribute.Component<
-      'shared.call-schedule-button',
+    ScheduleButtonSec: Schema.Attribute.Component<
+      'shared.schedule-button-with-arrow',
       false
     >;
   };
@@ -341,6 +486,43 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPlatFeatureCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_plat_feature_cards';
+  info: {
+    displayName: 'PlatFeatureCard';
+  };
+  attributes: {
+    FeatureContent: Schema.Attribute.Text;
+    FeatureIcon: Schema.Attribute.Media<'images' | 'files'>;
+    FeatureTitle: Schema.Attribute.String;
+  };
+}
+
+export interface SharedPlatFeatureImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_plat_feature_images';
+  info: {
+    description: '';
+    displayName: 'PlatFeatureImage';
+  };
+  attributes: {
+    ContentImage: Schema.Attribute.Media<'images' | 'files'>;
+    ContentLink: Schema.Attribute.String;
+    ContentTitle: Schema.Attribute.Text;
+    PlatIcon: Schema.Attribute.Media<'images' | 'files'>;
+    PlatIconTitle: Schema.Attribute.String;
+  };
+}
+
+export interface SharedPlatformTitle extends Struct.ComponentSchema {
+  collectionName: 'components_shared_platform_titles';
+  info: {
+    displayName: 'PlatformTitle';
+  };
+  attributes: {
+    PlatformTitle: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -372,6 +554,22 @@ export interface SharedScheduleButtonImages extends Struct.ComponentSchema {
   };
   attributes: {
     ButtonImage: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface SharedScheduleButtonWithArrow extends Struct.ComponentSchema {
+  collectionName: 'components_shared_schedule_button_with_arrows';
+  info: {
+    description: '';
+    displayName: 'ScheduleButtonWithArrow';
+  };
+  attributes: {
+    ArrowImage2: Schema.Attribute.Media<'images' | 'files'>;
+    ScheduleLink: Schema.Attribute.String;
+    ScheduleSec: Schema.Attribute.Component<
+      'shared.call-schedule-button',
+      false
+    >;
   };
 }
 
@@ -480,15 +678,29 @@ declare module '@strapi/strapi' {
       'home.home-precise-sec': HomeHomePreciseSec;
       'home.home-pricing-sec': HomeHomePricingSec;
       'home.home-stich-works': HomeHomeStichWorks;
+      'integration.integration': IntegrationIntegration;
+      'platform.feature-sec': PlatformFeatureSec;
+      'platform.platform': PlatformPlatform;
+      'resource.resource': ResourceResource;
+      'resource.resource-after-hero-sec': ResourceResourceAfterHeroSec;
+      'security.security': SecuritySecurity;
+      'security.security-after-hero-sec': SecuritySecurityAfterHeroSec;
+      'security.security-feature-sec': SecuritySecurityFeatureSec;
+      'security.security-sub-processor': SecuritySecuritySubProcessor;
+      'security.white-paper-sec': SecurityWhitePaperSec;
       'shared.benifit-card': SharedBenifitCard;
       'shared.call-schedule-button': SharedCallScheduleButton;
       'shared.call-schedule-demo': SharedCallScheduleDemo;
       'shared.home-action-card': SharedHomeActionCard;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
+      'shared.plat-feature-card': SharedPlatFeatureCard;
+      'shared.plat-feature-image': SharedPlatFeatureImage;
+      'shared.platform-title': SharedPlatformTitle;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.schedule-button-images': SharedScheduleButtonImages;
+      'shared.schedule-button-with-arrow': SharedScheduleButtonWithArrow;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'terms-and-privacy.content-list-component': TermsAndPrivacyContentListComponent;

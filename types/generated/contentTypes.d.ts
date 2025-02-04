@@ -572,6 +572,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
+    description: '';
     displayName: 'Home';
     pluralName: 'homes';
     singularName: 'home';
@@ -580,12 +581,64 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ActionCardSection: Schema.Attribute.Component<
+      'shared.home-action-card',
+      true
+    >;
+    ActionPart: Schema.Attribute.Component<'home.home-action-sec', false>;
+    BenifitCardSection: Schema.Attribute.Component<'shared.benifit-card', true>;
+    BenifitHiddenSec: Schema.Attribute.Component<
+      'home.home-benifit-hidden-sec',
+      false
+    >;
+    BenifitSecTitle: Schema.Attribute.Component<'home.home-benifit-sec', false>;
+    CallScheduleSection: Schema.Attribute.Component<
+      'shared.call-schedule-demo',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     HomePagePara: Schema.Attribute.Component<'home.home-page', false>;
+    ImageSection: Schema.Attribute.Component<'home.home-after-hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    ManualSection: Schema.Attribute.Component<'home.home-manual-sec', false>;
+    PreciseSection: Schema.Attribute.Component<'home.home-precise-sec', false>;
+    PricingSection: Schema.Attribute.Component<'home.home-pricing-sec', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    ScheduleSec: Schema.Attribute.Component<
+      'shared.schedule-button-with-arrow',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WorkFlowSec: Schema.Attribute.Component<'home.home-stich-works', false>;
+  };
+}
+
+export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
+  collectionName: 'integrations';
+  info: {
+    displayName: 'Integration';
+    pluralName: 'integrations';
+    singularName: 'integration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'integration.integration', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::integration.integration'
+    > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -597,6 +650,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
 export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
+    description: '';
     displayName: 'Navbar';
     pluralName: 'navbars';
     singularName: 'navbar';
@@ -608,6 +662,10 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    HeaderCallScheduleSec: Schema.Attribute.Component<
+      'shared.call-schedule-button',
+      false
+    >;
     HeaderCompany: Schema.Attribute.Component<'header.header-company', false>;
     HeaderLinks: Schema.Attribute.Component<'header.header-links', true>;
     HeaderLogo: Schema.Attribute.Component<'header.header-logo', false>;
@@ -622,6 +680,126 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
+  collectionName: 'platforms';
+  info: {
+    description: '';
+    displayName: 'Platform';
+    pluralName: 'platforms';
+    singularName: 'platform';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FeatureCard: Schema.Attribute.Component<'shared.plat-feature-card', true>;
+    FeatureCardSec: Schema.Attribute.Component<
+      'shared.plat-feature-card',
+      true
+    >;
+    FeatureTitle: Schema.Attribute.Component<'platform.feature-sec', false>;
+    HeroSection: Schema.Attribute.Component<'platform.platform', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::platform.platform'
+    > &
+      Schema.Attribute.Private;
+    PlatformCard: Schema.Attribute.Component<'shared.plat-feature-card', true>;
+    PlatformTitle: Schema.Attribute.Component<'shared.platform-title', false>;
+    PlatformWorkTitle: Schema.Attribute.Component<
+      'shared.platform-title',
+      false
+    >;
+    PlatImageSec: Schema.Attribute.Component<'shared.plat-feature-image', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    ScheduleSec: Schema.Attribute.Component<'shared.call-schedule-demo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResourceResource extends Struct.SingleTypeSchema {
+  collectionName: 'resources';
+  info: {
+    displayName: 'Resource';
+    pluralName: 'resources';
+    singularName: 'resource';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resource.resource'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    ResourceAfterHero: Schema.Attribute.Component<
+      'resource.resource-after-hero-sec',
+      false
+    >;
+    ResourceMainSec: Schema.Attribute.Component<'resource.resource', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSecuritySecurity extends Struct.SingleTypeSchema {
+  collectionName: 'securities';
+  info: {
+    description: '';
+    displayName: 'Security';
+    pluralName: 'securities';
+    singularName: 'security';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FeatureSec: Schema.Attribute.Component<
+      'security.security-feature-sec',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::security.security'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SecurityCardSec: Schema.Attribute.Component<
+      'security.security-after-hero-sec',
+      true
+    >;
+    SecurityHeroSection: Schema.Attribute.Component<'security.security', false>;
+    SecurityProcessorSec: Schema.Attribute.Component<
+      'security.security-sub-processor',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WhitePaperSec: Schema.Attribute.Component<
+      'security.white-paper-sec',
+      false
+    >;
   };
 }
 
@@ -1177,7 +1355,11 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
+      'api::integration.integration': ApiIntegrationIntegration;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::platform.platform': ApiPlatformPlatform;
+      'api::resource.resource': ApiResourceResource;
+      'api::security.security': ApiSecuritySecurity;
       'api::terms-or-policy.terms-or-policy': ApiTermsOrPolicyTermsOrPolicy;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

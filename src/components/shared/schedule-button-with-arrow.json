@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_schedule_button_with_arrows",
+  "info": {
+    "displayName": "ScheduleButtonWithArrow",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ScheduleSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-schedule-button"
+    },
+    "ArrowImage2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "ScheduleLink": {
+      "type": "string"
+    }
+  }
+}
