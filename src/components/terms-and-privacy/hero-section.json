@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_terms_and_privacy_hero_sections",
+  "info": {
+    "displayName": "Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "heroHeading": {
+      "type": "string"
+    }
+  }
+}

@@ -402,6 +402,60 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TermsAndPrivacyContentListComponent
+  extends Struct.ComponentSchema {
+  collectionName: 'components_terms_and_privacy_content_list_components';
+  info: {
+    description: '';
+    displayName: 'Content List Component';
+  };
+  attributes: {
+    listHeading: Schema.Attribute.RichText & Schema.Attribute.Required;
+    paragraphList: Schema.Attribute.Component<
+      'terms-and-privacy.paragraph-list',
+      true
+    >;
+  };
+}
+
+export interface TermsAndPrivacyContentListSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_terms_and_privacy_content_list_sections';
+  info: {
+    description: '';
+    displayName: 'Content List Section';
+  };
+  attributes: {
+    contentDate: Schema.Attribute.String;
+    contentDetail: Schema.Attribute.RichText;
+    contentHeading: Schema.Attribute.RichText & Schema.Attribute.Required;
+    listOfContent: Schema.Attribute.Component<
+      'terms-and-privacy.content-list-component',
+      true
+    >;
+  };
+}
+
+export interface TermsAndPrivacyHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_terms_and_privacy_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+  };
+  attributes: {
+    heroHeading: Schema.Attribute.String;
+  };
+}
+
+export interface TermsAndPrivacyParagraphList extends Struct.ComponentSchema {
+  collectionName: 'components_terms_and_privacy_paragraph_lists';
+  info: {
+    displayName: 'paragraphList';
+  };
+  attributes: {
+    Paragraph: Schema.Attribute.RichText;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -437,6 +491,10 @@ declare module '@strapi/strapi' {
       'shared.schedule-button-images': SharedScheduleButtonImages;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'terms-and-privacy.content-list-component': TermsAndPrivacyContentListComponent;
+      'terms-and-privacy.content-list-section': TermsAndPrivacyContentListSection;
+      'terms-and-privacy.hero-section': TermsAndPrivacyHeroSection;
+      'terms-and-privacy.paragraph-list': TermsAndPrivacyParagraphList;
     }
   }
 }

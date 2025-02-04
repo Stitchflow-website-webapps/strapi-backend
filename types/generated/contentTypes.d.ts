@@ -625,6 +625,42 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTermsOrPolicyTermsOrPolicy
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'terms_or_policies';
+  info: {
+    displayName: 'TermsOrPolicy';
+    pluralName: 'terms-or-policies';
+    singularName: 'terms-or-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentSection: Schema.Attribute.Component<
+      'terms-and-privacy.content-list-section',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroHeading: Schema.Attribute.Component<
+      'terms-and-privacy.hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-or-policy.terms-or-policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1142,6 +1178,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::terms-or-policy.terms-or-policy': ApiTermsOrPolicyTermsOrPolicy;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
