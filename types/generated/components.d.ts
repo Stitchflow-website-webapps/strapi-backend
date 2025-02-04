@@ -498,6 +498,21 @@ export interface SharedPlatFeatureCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPlatFeatureImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_plat_feature_images';
+  info: {
+    description: '';
+    displayName: 'PlatFeatureImage';
+  };
+  attributes: {
+    ContentImage: Schema.Attribute.Media<'images' | 'files'>;
+    ContentLink: Schema.Attribute.String;
+    ContentTitle: Schema.Attribute.Text;
+    PlatIcon: Schema.Attribute.Media<'images' | 'files'>;
+    PlatIconTitle: Schema.Attribute.String;
+  };
+}
+
 export interface SharedPlatformTitle extends Struct.ComponentSchema {
   collectionName: 'components_shared_platform_titles';
   info: {
@@ -549,7 +564,6 @@ export interface SharedScheduleButtonWithArrow extends Struct.ComponentSchema {
     displayName: 'ScheduleButtonWithArrow';
   };
   attributes: {
-    ArrowImage1: Schema.Attribute.Media<'images' | 'files'>;
     ArrowImage2: Schema.Attribute.Media<'images' | 'files'>;
     ScheduleLink: Schema.Attribute.String;
     ScheduleSec: Schema.Attribute.Component<
@@ -627,6 +641,7 @@ declare module '@strapi/strapi' {
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
       'shared.plat-feature-card': SharedPlatFeatureCard;
+      'shared.plat-feature-image': SharedPlatFeatureImage;
       'shared.platform-title': SharedPlatformTitle;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
