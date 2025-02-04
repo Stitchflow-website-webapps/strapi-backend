@@ -686,6 +686,7 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
 export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   collectionName: 'platforms';
   info: {
+    description: '';
     displayName: 'Platform';
     pluralName: 'platforms';
     singularName: 'platform';
@@ -697,6 +698,12 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    FeatureCard: Schema.Attribute.Component<'shared.plat-feature-card', true>;
+    FeatureCardSec: Schema.Attribute.Component<
+      'shared.plat-feature-card',
+      true
+    >;
+    FeatureTitle: Schema.Attribute.Component<'platform.feature-sec', false>;
     HeroSection: Schema.Attribute.Component<'platform.platform', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -704,7 +711,15 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
       'api::platform.platform'
     > &
       Schema.Attribute.Private;
+    PlatformCard: Schema.Attribute.Component<'shared.plat-feature-card', true>;
+    PlatformTitle: Schema.Attribute.Component<'shared.platform-title', false>;
+    PlatformWorkTitle: Schema.Attribute.Component<
+      'shared.platform-title',
+      false
+    >;
+    PlatImageSec: Schema.Attribute.Component<'shared.plat-feature-image', true>;
     publishedAt: Schema.Attribute.DateTime;
+    ScheduleSec: Schema.Attribute.Component<'shared.call-schedule-demo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
