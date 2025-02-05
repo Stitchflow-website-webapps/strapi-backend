@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_blogs_text_editors",
+  "info": {
+    "displayName": "Text Editor"
+  },
+  "options": {},
+  "attributes": {
+    "textOrImage": {
+      "type": "richtext"
+    }
+  }
+}

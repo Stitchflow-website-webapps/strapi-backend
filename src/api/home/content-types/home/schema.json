@@ -17,11 +17,6 @@
       "repeatable": false,
       "component": "home.home-page"
     },
-    "ScheduleSec": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.schedule-button-with-arrow"
-    },
     "ImageSection": {
       "type": "component",
       "repeatable": false,

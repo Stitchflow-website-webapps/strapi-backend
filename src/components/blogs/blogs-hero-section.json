@@ -1,17 +1,18 @@
 {
-  "collectionName": "components_shared_schedule_button_with_arrows",
+  "collectionName": "components_blogs_blogs_hero_sections",
   "info": {
-    "displayName": "ScheduleButtonWithArrow",
+    "displayName": "Blogs Hero Section",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "ScheduleSec": {
+    "head": {
+      "displayName": "Text Box",
       "type": "component",
-      "repeatable": false,
-      "component": "shared.call-schedule-button"
+      "repeatable": true,
+      "component": "blogs.text-box"
     },
-    "ArrowImage2": {
+    "bannerImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -20,7 +21,7 @@
         "files"
       ]
     },
-    "ScheduleLink": {
+    "postedDate": {
       "type": "string"
     }
   }

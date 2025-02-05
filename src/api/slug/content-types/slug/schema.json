@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slugs",
+  "info": {
+    "singularName": "slug",
+    "pluralName": "slugs",
+    "displayName": "Slug",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blogs.blogs-hero-section"
+    },
+    "contentSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blogs.content-section"
+    }
+  }
+}

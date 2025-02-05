@@ -12,11 +12,6 @@
     "Description": {
       "type": "text"
     },
-    "ScheduleSec": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.schedule-button-with-arrow"
-    },
     "BannerImage": {
       "allowedTypes": [
         "images",
