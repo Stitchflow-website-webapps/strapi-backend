@@ -28,14 +28,25 @@
     "email": {
       "type": "string"
     },
-    "articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article",
-      "mappedBy": "author"
-    },
     "aboutAuthor": {
       "type": "richtext"
+    },
+    "slugs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slug.slug",
+      "mappedBy": "author"
+    },
+    "role": {
+      "type": "string"
+    },
+    "company": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.call-schedule-button"
+    },
+    "linkedInURL": {
+      "type": "string"
     }
   }
 }
