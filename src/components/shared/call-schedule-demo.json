@@ -12,10 +12,10 @@
     "CallScheduleDescription": {
       "type": "text"
     },
-    "ScheduleButtonSec": {
+    "ScheduleButton": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.schedule-button-with-arrow"
+      "component": "shared.call-schedule-button"
     }
   }
 }

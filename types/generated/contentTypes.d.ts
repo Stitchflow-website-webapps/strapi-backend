@@ -453,6 +453,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    aboutAuthor: Schema.Attribute.RichText;
     articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     createdAt: Schema.Attribute.DateTime;
@@ -608,10 +609,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     PreciseSection: Schema.Attribute.Component<'home.home-precise-sec', false>;
     PricingSection: Schema.Attribute.Component<'home.home-pricing-sec', false>;
     publishedAt: Schema.Attribute.DateTime;
-    ScheduleSec: Schema.Attribute.Component<
-      'shared.schedule-button-with-arrow',
-      false
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -800,6 +797,33 @@ export interface ApiSecuritySecurity extends Struct.SingleTypeSchema {
       'security.white-paper-sec',
       false
     >;
+  };
+}
+
+export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
+  collectionName: 'slugs';
+  info: {
+    description: '';
+    displayName: 'Slug';
+    pluralName: 'slugs';
+    singularName: 'slug';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentSection: Schema.Attribute.Component<'blogs.content-section', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<'blogs.blogs-hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1360,6 +1384,7 @@ declare module '@strapi/strapi' {
       'api::platform.platform': ApiPlatformPlatform;
       'api::resource.resource': ApiResourceResource;
       'api::security.security': ApiSecuritySecurity;
+      'api::slug.slug': ApiSlugSlug;
       'api::terms-or-policy.terms-or-policy': ApiTermsOrPolicyTermsOrPolicy;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
