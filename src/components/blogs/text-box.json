@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blogs_text_boxes",
+  "info": {
+    "displayName": "Text Box",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "richtext"
+    }
+  }
+}

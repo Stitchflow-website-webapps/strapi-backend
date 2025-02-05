@@ -77,6 +77,51 @@ export interface AboutValueSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BlogsBlogsHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_blogs_hero_sections';
+  info: {
+    description: '';
+    displayName: 'Blogs Hero Section';
+  };
+  attributes: {
+    bannerImage: Schema.Attribute.Media<'images' | 'files'>;
+    head: Schema.Attribute.Component<'blogs.text-box', true>;
+    postedDate: Schema.Attribute.String;
+  };
+}
+
+export interface BlogsContentSection extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_content_sections';
+  info: {
+    displayName: 'Content Section';
+  };
+  attributes: {
+    contentTextOrImage: Schema.Attribute.Component<'blogs.text-editor', true>;
+    heading: Schema.Attribute.Component<'blogs.text-box', true>;
+  };
+}
+
+export interface BlogsTextBox extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_text_boxes';
+  info: {
+    description: '';
+    displayName: 'Text Box';
+  };
+  attributes: {
+    heading: Schema.Attribute.RichText;
+  };
+}
+
+export interface BlogsTextEditor extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_text_editors';
+  info: {
+    displayName: 'Text Editor';
+  };
+  attributes: {
+    textOrImage: Schema.Attribute.RichText;
+  };
+}
+
 export interface FooterFooterLinks extends Struct.ComponentSchema {
   collectionName: 'components_footer_footer_links';
   info: {
@@ -275,10 +320,6 @@ export interface IntegrationIntegration extends Struct.ComponentSchema {
     BannerImage: Schema.Attribute.Media<'images' | 'files'>;
     Description: Schema.Attribute.Text;
     HeroHeading: Schema.Attribute.Text;
-    ScheduleSec: Schema.Attribute.Component<
-      'shared.schedule-button-with-arrow',
-      false
-    >;
   };
 }
 
@@ -444,8 +485,8 @@ export interface SharedCallScheduleDemo extends Struct.ComponentSchema {
   attributes: {
     CallScheduleDescription: Schema.Attribute.Text;
     CallScheuleHeading: Schema.Attribute.String;
-    ScheduleButtonSec: Schema.Attribute.Component<
-      'shared.schedule-button-with-arrow',
+    ScheduleButton: Schema.Attribute.Component<
+      'shared.call-schedule-button',
       false
     >;
   };
@@ -547,32 +588,6 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedScheduleButtonImages extends Struct.ComponentSchema {
-  collectionName: 'components_shared_schedule_button_images';
-  info: {
-    displayName: 'Schedule Button Images';
-  };
-  attributes: {
-    ButtonImage: Schema.Attribute.Media<'images' | 'files'>;
-  };
-}
-
-export interface SharedScheduleButtonWithArrow extends Struct.ComponentSchema {
-  collectionName: 'components_shared_schedule_button_with_arrows';
-  info: {
-    description: '';
-    displayName: 'ScheduleButtonWithArrow';
-  };
-  attributes: {
-    ArrowImage2: Schema.Attribute.Media<'images' | 'files'>;
-    ScheduleLink: Schema.Attribute.String;
-    ScheduleSec: Schema.Attribute.Component<
-      'shared.call-schedule-button',
-      false
-    >;
-  };
-}
-
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -663,6 +678,10 @@ declare module '@strapi/strapi' {
       'about.about-values': AboutAboutValues;
       'about.roles-list': AboutRolesList;
       'about.value-section': AboutValueSection;
+      'blogs.blogs-hero-section': BlogsBlogsHeroSection;
+      'blogs.content-section': BlogsContentSection;
+      'blogs.text-box': BlogsTextBox;
+      'blogs.text-editor': BlogsTextEditor;
       'footer.footer-links': FooterFooterLinks;
       'footer.social-media': FooterSocialMedia;
       'header.header-company': HeaderHeaderCompany;
@@ -699,8 +718,6 @@ declare module '@strapi/strapi' {
       'shared.platform-title': SharedPlatformTitle;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
-      'shared.schedule-button-images': SharedScheduleButtonImages;
-      'shared.schedule-button-with-arrow': SharedScheduleButtonWithArrow;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'terms-and-privacy.content-list-component': TermsAndPrivacyContentListComponent;
