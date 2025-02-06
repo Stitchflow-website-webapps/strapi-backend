@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_integration_categories",
+  "info": {
+    "displayName": "Category"
+  },
+  "options": {},
+  "attributes": {
+    "Network": {
+      "type": "string"
+    },
+    "Entitle": {
+      "type": "string"
+    },
+    "Product": {
+      "type": "string"
+    },
+    "Device": {
+      "type": "string"
+    },
+    "Identity": {
+      "type": "string"
+    },
+    "Ticket": {
+      "type": "string"
+    }
+  }
+}

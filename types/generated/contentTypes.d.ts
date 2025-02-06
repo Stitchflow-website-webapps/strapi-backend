@@ -621,6 +621,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
 export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
   collectionName: 'integrations';
   info: {
+    description: '';
     displayName: 'Integration';
     pluralName: 'integrations';
     singularName: 'integration';
@@ -629,6 +630,7 @@ export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    CategorySec: Schema.Attribute.Component<'integration.category', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
