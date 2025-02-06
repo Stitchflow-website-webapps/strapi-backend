@@ -19,8 +19,13 @@
     },
     "CategorySec": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "integration.category"
+    },
+    "ConnectorImageSec": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integration.connector-image"
     }
   }
 }
