@@ -3,11 +3,13 @@ module.exports = [
   'strapi::errors',
   'strapi::security',
   {
-  name:'strapi::cors',
-  config:{
-    headers:'*',
-    origin:['http://localhost:3000'],
-  },
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: ['http://localhost:3000', 'https://website-steel-xi-84.vercel.app'], // Add your frontend domain
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    },
   },
   'strapi::poweredBy',
   'strapi::query',
