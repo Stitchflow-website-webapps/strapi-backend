@@ -630,7 +630,11 @@ export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    CategorySec: Schema.Attribute.Component<'integration.category', false>;
+    CategorySec: Schema.Attribute.Component<'integration.category', true>;
+    ConnectorImageSec: Schema.Attribute.Component<
+      'integration.connector-image',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
