@@ -313,15 +313,24 @@ export interface HomeHomeStichWorks extends Struct.ComponentSchema {
 export interface IntegrationCategory extends Struct.ComponentSchema {
   collectionName: 'components_integration_categories';
   info: {
+    description: '';
     displayName: 'Category';
   };
   attributes: {
-    Device: Schema.Attribute.String;
-    Entitle: Schema.Attribute.String;
-    Identity: Schema.Attribute.String;
-    Network: Schema.Attribute.String;
-    Product: Schema.Attribute.String;
-    Ticket: Schema.Attribute.String;
+    CategoryList: Schema.Attribute.String;
+  };
+}
+
+export interface IntegrationConnectorImage extends Struct.ComponentSchema {
+  collectionName: 'components_integration_connector_images';
+  info: {
+    description: '';
+    displayName: 'ConnectorImage';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ImageText: Schema.Attribute.String;
+    ImageTitle: Schema.Attribute.String;
   };
 }
 
@@ -713,6 +722,7 @@ declare module '@strapi/strapi' {
       'home.home-pricing-sec': HomeHomePricingSec;
       'home.home-stich-works': HomeHomeStichWorks;
       'integration.category': IntegrationCategory;
+      'integration.connector-image': IntegrationConnectorImage;
       'integration.integration': IntegrationIntegration;
       'platform.feature-sec': PlatformFeatureSec;
       'platform.platform': PlatformPlatform;
