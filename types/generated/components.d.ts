@@ -318,6 +318,10 @@ export interface IntegrationCategory extends Struct.ComponentSchema {
   };
   attributes: {
     CategoryList: Schema.Attribute.String;
+    connectors: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::connector.connector'
+    >;
   };
 }
 
@@ -328,6 +332,18 @@ export interface IntegrationConnectorImage extends Struct.ComponentSchema {
     displayName: 'ConnectorImage';
   };
   attributes: {
+    CategoryType: Schema.Attribute.Enumeration<
+      [
+        'Networking',
+        'Entitlements',
+        'Productivity',
+        'Devices',
+        'Identity',
+        'Ticketing',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Networking'>;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ImageText: Schema.Attribute.String;
     ImageTitle: Schema.Attribute.String;

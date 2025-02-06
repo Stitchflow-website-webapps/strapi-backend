@@ -22,6 +22,19 @@
     },
     "ImageTitle": {
       "type": "string"
+    },
+    "CategoryType": {
+      "type": "enumeration",
+      "enum": [
+        "Networking",
+        "Entitlements",
+        "Productivity",
+        "Devices",
+        "Identity",
+        "Ticketing"
+      ],
+      "default": "Networking",
+      "required": true
     }
   }
 }
