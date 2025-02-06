@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_home_pages",
+  "info": {
+    "displayName": "HomePage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "HeroSectionHeading": {
+      "type": "text"
+    },
+    "HeroSectionPara1": {
+      "type": "blocks"
+    },
+    "HeroSectionPara2": {
+      "type": "blocks"
+    }
+  }
+}

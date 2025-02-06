@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blogs_blogs_hero_sections",
+  "info": {
+    "displayName": "Blogs Hero Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "displayName": "Text Box",
+      "type": "component",
+      "repeatable": true,
+      "component": "blogs.text-box"
+    },
+    "bannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "postedDate": {
+      "type": "string"
+    }
+  }
+}

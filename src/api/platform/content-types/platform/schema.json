@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "platforms",
+  "info": {
+    "singularName": "platform",
+    "pluralName": "platforms",
+    "displayName": "Platform",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "platform.platform"
+    },
+    "PlatImageSec": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.plat-feature-image"
+    },
+    "FeatureTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "platform.feature-sec"
+    },
+    "FeatureCardSec": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.plat-feature-card"
+    },
+    "PlatformTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.platform-title"
+    },
+    "PlatformCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.plat-feature-card"
+    },
+    "PlatformWorkTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.platform-title"
+    },
+    "FeatureCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.plat-feature-card"
+    },
+    "ScheduleSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-schedule-demo"
+    }
+  }
+}

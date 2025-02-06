@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_integration_integrations",
+  "info": {
+    "displayName": "Integration",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "HeroHeading": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "BannerImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

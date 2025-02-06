@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_header_header_companies",
+  "info": {
+    "displayName": "HeaderCompany"
+  },
+  "options": {},
+  "attributes": {
+    "HeaderCompanyPageText": {
+      "type": "string"
+    }
+  }
+}

@@ -19,16 +19,34 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     },
     "email": {
       "type": "string"
     },
-    "articles": {
+    "aboutAuthor": {
+      "type": "richtext"
+    },
+    "slugs": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article.article",
+      "target": "api::slug.slug",
       "mappedBy": "author"
+    },
+    "role": {
+      "type": "string"
+    },
+    "company": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.call-schedule-button"
+    },
+    "linkedInURL": {
+      "type": "string"
     }
   }
 }

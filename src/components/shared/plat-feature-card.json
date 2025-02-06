@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_plat_feature_cards",
+  "info": {
+    "displayName": "PlatFeatureCard"
+  },
+  "options": {},
+  "attributes": {
+    "FeatureIcon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "FeatureTitle": {
+      "type": "string"
+    },
+    "FeatureContent": {
+      "type": "text"
+    }
+  }
+}

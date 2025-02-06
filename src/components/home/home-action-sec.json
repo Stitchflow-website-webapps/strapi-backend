@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_home_home_action_secs",
+  "info": {
+    "displayName": "HomeActionSec"
+  },
+  "options": {},
+  "attributes": {
+    "ActionHeading": {
+      "type": "text"
+    }
+  }
+}

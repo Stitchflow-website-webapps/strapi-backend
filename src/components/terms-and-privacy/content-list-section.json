@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_terms_and_privacy_content_list_sections",
+  "info": {
+    "displayName": "Content List Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "contentHeading": {
+      "type": "richtext",
+      "required": true
+    },
+    "contentDate": {
+      "type": "string"
+    },
+    "contentDetail": {
+      "type": "richtext"
+    },
+    "listOfContent": {
+      "displayName": "Content List Component",
+      "type": "component",
+      "repeatable": true,
+      "component": "terms-and-privacy.content-list-component"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbars",
+  "info": {
+    "singularName": "navbar",
+    "pluralName": "navbars",
+    "displayName": "Navbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeaderLogo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "header.header-logo"
+    },
+    "HeaderLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.header-links"
+    },
+    "HeaderCompany": {
+      "type": "component",
+      "repeatable": false,
+      "component": "header.header-company"
+    },
+    "HeaderNestedLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.header-links"
+    },
+    "HeaderCallScheduleSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-schedule-button"
+    }
+  }
+}

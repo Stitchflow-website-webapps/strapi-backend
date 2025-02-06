@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_terms_and_privacy_paragraph_lists",
+  "info": {
+    "displayName": "paragraphList"
+  },
+  "options": {},
+  "attributes": {
+    "Paragraph": {
+      "type": "richtext"
+    }
+  }
+}
