@@ -8,6 +8,11 @@
   "attributes": {
     "CategoryList": {
       "type": "string"
+    },
+    "connectors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::connector.connector"
     }
   }
 }
