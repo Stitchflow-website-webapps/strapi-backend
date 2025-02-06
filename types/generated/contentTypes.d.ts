@@ -842,7 +842,7 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
   collectionName: 'slugs';
   info: {
     description: '';
-    displayName: 'Slug';
+    displayName: 'Blog';
     pluralName: 'slugs';
     singularName: 'slug';
   };
