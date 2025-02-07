@@ -318,10 +318,6 @@ export interface IntegrationCategory extends Struct.ComponentSchema {
   };
   attributes: {
     CategoryList: Schema.Attribute.String;
-    connectors: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::connector.connector'
-    >;
   };
 }
 
