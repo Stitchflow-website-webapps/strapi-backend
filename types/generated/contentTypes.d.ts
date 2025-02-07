@@ -508,36 +508,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiConnectorConnector extends Struct.CollectionTypeSchema {
-  collectionName: 'connectors';
-  info: {
-    description: '';
-    displayName: 'ConnectorPage';
-    pluralName: 'connectors';
-    singularName: 'connector';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    CategoryTy: Schema.Attribute.Component<'integration.category', true>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    ImageTy: Schema.Attribute.Component<'integration.connector-image', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::connector.connector'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -1415,7 +1385,6 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
-      'api::connector.connector': ApiConnectorConnector;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
