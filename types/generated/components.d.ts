@@ -381,12 +381,31 @@ export interface PlatformPlatform extends Struct.ComponentSchema {
   };
 }
 
+export interface ResourceBlogSection extends Struct.ComponentSchema {
+  collectionName: 'components_resource_blog_sections';
+  info: {
+    displayName: 'BlogSection';
+  };
+  attributes: {
+    Category: Schema.Attribute.Enumeration<['Blog', 'Case Study']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Blog'>;
+    SubCategory: Schema.Attribute.Enumeration<
+      ['Product', 'Company', 'SaaS Management']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Product'>;
+  };
+}
+
 export interface ResourceResource extends Struct.ComponentSchema {
   collectionName: 'components_resource_resources';
   info: {
+    description: '';
     displayName: 'Resource';
   };
   attributes: {
+    ContentSec: Schema.Attribute.Blocks;
     ResourceDescription: Schema.Attribute.Text;
     ResourceHeading: Schema.Attribute.Text;
   };
@@ -395,6 +414,7 @@ export interface ResourceResource extends Struct.ComponentSchema {
 export interface ResourceResourceAfterHeroSec extends Struct.ComponentSchema {
   collectionName: 'components_resource_resource_after_hero_secs';
   info: {
+    description: '';
     displayName: 'ResourceAfterHeroSec';
   };
   attributes: {
@@ -404,6 +424,9 @@ export interface ResourceResourceAfterHeroSec extends Struct.ComponentSchema {
     ResourceBlogIcon: Schema.Attribute.Media<'images' | 'files'>;
     ResourceBlogText: Schema.Attribute.String;
     ResourceCaseStudyIcon: Schema.Attribute.Media<'images' | 'files'>;
+    ResourceCategory: Schema.Attribute.Enumeration<['Blog', 'CaseStudies']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Blog'>;
   };
 }
 
@@ -593,10 +616,12 @@ export interface SharedPlatFeatureImage extends Struct.ComponentSchema {
 export interface SharedPlatformTitle extends Struct.ComponentSchema {
   collectionName: 'components_shared_platform_titles';
   info: {
+    description: '';
     displayName: 'PlatformTitle';
   };
   attributes: {
     PlatformTitle: Schema.Attribute.Text;
+    PlatformTitlee: Schema.Attribute.Blocks;
   };
 }
 
@@ -738,6 +763,7 @@ declare module '@strapi/strapi' {
       'integration.integration': IntegrationIntegration;
       'platform.feature-sec': PlatformFeatureSec;
       'platform.platform': PlatformPlatform;
+      'resource.blog-section': ResourceBlogSection;
       'resource.resource': ResourceResource;
       'resource.resource-after-hero-sec': ResourceResourceAfterHeroSec;
       'security.security': SecuritySecurity;
