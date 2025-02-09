@@ -1,25 +1,28 @@
 {
   "collectionName": "components_resource_resource_after_hero_secs",
   "info": {
-    "displayName": "ResourceAfterHeroSec"
+    "displayName": "ResourceAfterHeroSec",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "ResourceBlogIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "ResourceCaseStudyIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "ResourceBlogText": {
       "type": "string"
@@ -32,6 +35,15 @@
     },
     "CaseStudyLink": {
       "type": "string"
+    },
+    "ResourceCategory": {
+      "type": "enumeration",
+      "enum": [
+        "Blog",
+        "CaseStudies"
+      ],
+      "default": "Blog",
+      "required": true
     }
   }
 }
