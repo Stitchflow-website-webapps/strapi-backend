@@ -264,6 +264,7 @@ export interface HomeHomePage extends Struct.ComponentSchema {
     displayName: 'HomePage';
   };
   attributes: {
+    HeroImageSection: Schema.Attribute.Component<'home.home-hero-image', false>;
     HeroSectionHeading: Schema.Attribute.Text;
     HeroSectionPara1: Schema.Attribute.Blocks;
     HeroSectionPara2: Schema.Attribute.Blocks;
