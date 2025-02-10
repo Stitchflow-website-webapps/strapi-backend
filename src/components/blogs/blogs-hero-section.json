@@ -6,11 +6,8 @@
   },
   "options": {},
   "attributes": {
-    "head": {
-      "displayName": "Text Box",
-      "type": "component",
-      "repeatable": true,
-      "component": "blogs.text-box"
+    "heading": {
+      "type": "string"
     },
     "bannerImage": {
       "type": "media",
@@ -22,7 +19,11 @@
       ]
     },
     "postedDate": {
-      "type": "string"
+      "type": "date"
+    },
+    "urlSlug": {
+      "type": "string",
+      "required": true
     }
   }
 }
