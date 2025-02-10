@@ -266,6 +266,7 @@ export interface HomeHomePage extends Struct.ComponentSchema {
   attributes: {
     HeroSectionHeading: Schema.Attribute.Text;
     HeroSectionPara1: Schema.Attribute.Blocks;
+    HeroSectionPara2: Schema.Attribute.Blocks;
   };
 }
 
