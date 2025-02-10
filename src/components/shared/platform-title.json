@@ -1,12 +1,16 @@
 {
   "collectionName": "components_shared_platform_titles",
   "info": {
-    "displayName": "PlatformTitle"
+    "displayName": "PlatformTitle",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "PlatformTitle": {
       "type": "text"
+    },
+    "PlatformTitlee": {
+      "type": "blocks"
     }
   }
 }
