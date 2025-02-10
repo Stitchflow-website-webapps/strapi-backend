@@ -266,7 +266,6 @@ export interface HomeHomePage extends Struct.ComponentSchema {
   attributes: {
     HeroSectionHeading: Schema.Attribute.Text;
     HeroSectionPara1: Schema.Attribute.Blocks;
-    HeroSectionPara2: Schema.Attribute.Blocks;
   };
 }
 
@@ -300,13 +299,13 @@ export interface HomeHomePricingSec extends Struct.ComponentSchema {
 export interface HomeHomeStichWorks extends Struct.ComponentSchema {
   collectionName: 'components_home_home_stich_works';
   info: {
+    description: '';
     displayName: 'HomeStichWorks';
   };
   attributes: {
     StichWorkImage: Schema.Attribute.Media<'images' | 'files'>;
     StichWorkPara1: Schema.Attribute.Blocks;
     StitchWorkHeading: Schema.Attribute.Text;
-    StitchWorkPara2: Schema.Attribute.Blocks;
   };
 }
 

@@ -11,9 +11,6 @@
     },
     "HeroSectionPara1": {
       "type": "blocks"
-    },
-    "HeroSectionPara2": {
-      "type": "blocks"
     }
   }
 }
