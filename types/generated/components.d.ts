@@ -621,6 +621,7 @@ export interface SharedPlatformTitle extends Struct.ComponentSchema {
     displayName: 'PlatformTitle';
   };
   attributes: {
+    ContentTit: Schema.Attribute.RichText;
     PlatformTitle: Schema.Attribute.Text;
     PlatformTitlee: Schema.Attribute.Blocks;
   };
