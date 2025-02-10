@@ -17,16 +17,24 @@
       "repeatable": false,
       "component": "blogs.blogs-hero-section"
     },
-    "contentSection": {
-      "type": "component",
-      "repeatable": true,
-      "component": "blogs.content-section"
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "slugs"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "metaData": {
+      "displayName": "Meta Tag",
+      "type": "component",
+      "repeatable": false,
+      "component": "blogs.meta-tag"
     }
   }
 }

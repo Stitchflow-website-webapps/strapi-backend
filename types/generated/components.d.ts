@@ -85,8 +85,9 @@ export interface BlogsBlogsHeroSection extends Struct.ComponentSchema {
   };
   attributes: {
     bannerImage: Schema.Attribute.Media<'images' | 'files'>;
-    head: Schema.Attribute.Component<'blogs.text-box', true>;
-    postedDate: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    postedDate: Schema.Attribute.Date;
+    urlSlug: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -98,6 +99,19 @@ export interface BlogsContentSection extends Struct.ComponentSchema {
   attributes: {
     contentTextOrImage: Schema.Attribute.Component<'blogs.text-editor', true>;
     heading: Schema.Attribute.Component<'blogs.text-box', true>;
+  };
+}
+
+export interface BlogsMetaTag extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_meta_tags';
+  info: {
+    description: '';
+    displayName: 'Meta Tag';
+  };
+  attributes: {
+    googleVerification: Schema.Attribute.String;
+    metaDescription: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String;
   };
 }
 
@@ -740,6 +754,7 @@ declare module '@strapi/strapi' {
       'about.value-section': AboutValueSection;
       'blogs.blogs-hero-section': BlogsBlogsHeroSection;
       'blogs.content-section': BlogsContentSection;
+      'blogs.meta-tag': BlogsMetaTag;
       'blogs.text-box': BlogsTextBox;
       'blogs.text-editor': BlogsTextEditor;
       'footer.footer-links': FooterFooterLinks;

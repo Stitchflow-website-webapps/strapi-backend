@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blogs_meta_tags",
+  "info": {
+    "displayName": "Meta Tag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "string"
+    },
+    "googleVerification": {
+      "type": "string"
+    }
+  }
+}
