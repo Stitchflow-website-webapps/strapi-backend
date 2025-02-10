@@ -20,6 +20,9 @@
         "images",
         "files"
       ]
+    },
+    "StichWorkPara2": {
+      "type": "blocks"
     }
   }
 }
