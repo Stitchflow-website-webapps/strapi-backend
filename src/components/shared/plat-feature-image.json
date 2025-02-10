@@ -18,9 +18,6 @@
     "PlatIconTitle": {
       "type": "string"
     },
-    "ContentTitle": {
-      "type": "text"
-    },
     "ContentLink": {
       "type": "string"
     },
@@ -32,6 +29,9 @@
         "images",
         "files"
       ]
+    },
+    "ContentTitle1": {
+      "type": "blocks"
     }
   }
 }
