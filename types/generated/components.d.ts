@@ -406,7 +406,6 @@ export interface ResourceResource extends Struct.ComponentSchema {
   };
   attributes: {
     ContentSec: Schema.Attribute.Blocks;
-    ResourceDescription: Schema.Attribute.Text;
     ResourceHeading: Schema.Attribute.Text;
   };
 }

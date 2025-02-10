@@ -734,6 +734,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
 export interface ApiResourceResource extends Struct.SingleTypeSchema {
   collectionName: 'resources';
   info: {
+    description: '';
     displayName: 'Resource';
     pluralName: 'resources';
     singularName: 'resource';
@@ -757,6 +758,10 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
       false
     >;
     ResourceMainSec: Schema.Attribute.Component<'resource.resource', false>;
+    SubCategorySection: Schema.Attribute.Component<
+      'resource.blog-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
