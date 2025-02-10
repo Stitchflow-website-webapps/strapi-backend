@@ -608,7 +608,7 @@ export interface SharedPlatFeatureImage extends Struct.ComponentSchema {
   attributes: {
     ContentImage: Schema.Attribute.Media<'images' | 'files'>;
     ContentLink: Schema.Attribute.String;
-    ContentTitle: Schema.Attribute.Text;
+    ContentTitle1: Schema.Attribute.Blocks;
     PlatIcon: Schema.Attribute.Media<'images' | 'files'>;
     PlatIconTitle: Schema.Attribute.String;
   };
