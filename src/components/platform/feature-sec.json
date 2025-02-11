@@ -1,7 +1,8 @@
 {
   "collectionName": "components_platform_feature_secs",
   "info": {
-    "displayName": "FeatureSec"
+    "displayName": "FeatureSec",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,11 @@
       "type": "string"
     },
     "FeatureTitle": {
-      "type": "text"
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

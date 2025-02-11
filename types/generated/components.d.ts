@@ -364,11 +364,18 @@ export interface IntegrationIntegration extends Struct.ComponentSchema {
 export interface PlatformFeatureSec extends Struct.ComponentSchema {
   collectionName: 'components_platform_feature_secs';
   info: {
+    description: '';
     displayName: 'FeatureSec';
   };
   attributes: {
     FeatureHeading: Schema.Attribute.String;
-    FeatureTitle: Schema.Attribute.Text;
+    FeatureTitle: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
   };
 }
 
