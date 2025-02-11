@@ -7,13 +7,11 @@
   "options": {},
   "attributes": {
     "PlatformTitle": {
-      "type": "text"
-    },
-    "PlatformTitlee": {
-      "type": "blocks"
-    },
-    "ContentTit": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "defaultMarkdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
