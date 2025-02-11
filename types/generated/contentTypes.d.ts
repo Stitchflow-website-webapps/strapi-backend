@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
+    description: '';
     displayName: 'About';
     pluralName: 'abouts';
     singularName: 'about';
@@ -387,6 +388,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     ParagraphSection: Schema.Attribute.Component<'about.about-pargraph', true>;
     publishedAt: Schema.Attribute.DateTime;
     RolesSection: Schema.Attribute.Component<'about.about-roles', false>;
@@ -608,6 +610,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
     ManualSection: Schema.Attribute.Component<'home.home-manual-sec', false>;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     PreciseSection: Schema.Attribute.Component<'home.home-precise-sec', false>;
     PricingSection: Schema.Attribute.Component<'home.home-pricing-sec', false>;
     publishedAt: Schema.Attribute.DateTime;
@@ -645,6 +648,7 @@ export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
       'api::integration.integration'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -716,6 +720,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
       'api::platform.platform'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     PlatformCard: Schema.Attribute.Component<'shared.plat-feature-card', true>;
     PlatformTitle: Schema.Attribute.Component<'shared.platform-title', false>;
     PlatformWorkTitle: Schema.Attribute.Component<
@@ -752,6 +757,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
       'api::resource.resource'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     ResourceAfterHero: Schema.Attribute.Component<
       'resource.resource-after-hero-sec',
@@ -793,6 +799,7 @@ export interface ApiSecuritySecurity extends Struct.SingleTypeSchema {
       'api::security.security'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     SecurityCardSec: Schema.Attribute.Component<
       'security.security-after-hero-sec',
@@ -840,7 +847,7 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'> &
       Schema.Attribute.Private;
-    metaData: Schema.Attribute.Component<'blogs.meta-tag', false>;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -852,6 +859,7 @@ export interface ApiTermsOrPolicyTermsOrPolicy
   extends Struct.CollectionTypeSchema {
   collectionName: 'terms_or_policies';
   info: {
+    description: '';
     displayName: 'TermsOrPolicy';
     pluralName: 'terms-or-policies';
     singularName: 'terms-or-policy';
@@ -877,6 +885,7 @@ export interface ApiTermsOrPolicyTermsOrPolicy
       'api::terms-or-policy.terms-or-policy'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
