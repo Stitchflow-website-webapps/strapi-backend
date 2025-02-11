@@ -31,10 +31,9 @@
       "customField": "plugin::ckeditor5.CKEditor"
     },
     "metaData": {
-      "displayName": "Meta Tag",
       "type": "component",
       "repeatable": false,
-      "component": "blogs.meta-tag"
+      "component": "shared.seo"
     }
   }
 }
