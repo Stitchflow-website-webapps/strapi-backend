@@ -621,9 +621,13 @@ export interface SharedPlatformTitle extends Struct.ComponentSchema {
     displayName: 'PlatformTitle';
   };
   attributes: {
-    ContentTit: Schema.Attribute.RichText;
-    PlatformTitle: Schema.Attribute.Text;
-    PlatformTitlee: Schema.Attribute.Blocks;
+    PlatformTitle: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
   };
 }
 
