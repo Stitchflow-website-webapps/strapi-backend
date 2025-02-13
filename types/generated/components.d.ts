@@ -356,6 +356,7 @@ export interface IntegrationIntegration extends Struct.ComponentSchema {
   };
   attributes: {
     BannerImage: Schema.Attribute.Media<'images' | 'files'>;
+    BannerImage2: Schema.Attribute.Media<'images' | 'files'>;
     Description: Schema.Attribute.Text;
     HeroHeading: Schema.Attribute.Text;
   };
