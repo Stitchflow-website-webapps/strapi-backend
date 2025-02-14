@@ -9,9 +9,6 @@
     "StitchWorkHeading": {
       "type": "text"
     },
-    "StichWorkPara1": {
-      "type": "blocks"
-    },
     "StichWorkImage": {
       "type": "media",
       "multiple": false,
@@ -21,8 +18,11 @@
         "files"
       ]
     },
+    "StichWorkPara1": {
+      "type": "text"
+    },
     "StichWorkPara2": {
-      "type": "blocks"
+      "type": "text"
     }
   }
 }
