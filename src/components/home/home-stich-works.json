@@ -19,10 +19,10 @@
       ]
     },
     "StichWorkPara1": {
-      "type": "blocks"
+      "type": "text"
     },
     "StichWorkPara2": {
-      "type": "blocks"
+      "type": "text"
     }
   }
 }
