@@ -306,8 +306,8 @@ export interface HomeHomeStichWorks extends Struct.ComponentSchema {
   };
   attributes: {
     StichWorkImage: Schema.Attribute.Media<'images' | 'files'>;
-    StichWorkPara1: Schema.Attribute.Text;
-    StichWorkPara2: Schema.Attribute.Text;
+    StichWorkPara1: Schema.Attribute.Blocks;
+    StichWorkPara2: Schema.Attribute.Blocks;
     StitchWorkHeading: Schema.Attribute.Text;
   };
 }
