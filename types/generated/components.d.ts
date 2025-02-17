@@ -123,6 +123,16 @@ export interface BlogsTextEditor extends Struct.ComponentSchema {
   };
 }
 
+export interface DemoDemoComponent extends Struct.ComponentSchema {
+  collectionName: 'components_demo_demo_components';
+  info: {
+    displayName: 'DemoComponent';
+  };
+  attributes: {
+    CalendlyLink: Schema.Attribute.Text;
+  };
+}
+
 export interface FooterFooterLinks extends Struct.ComponentSchema {
   collectionName: 'components_footer_footer_links';
   info: {
@@ -760,6 +770,7 @@ declare module '@strapi/strapi' {
       'blogs.content-section': BlogsContentSection;
       'blogs.text-box': BlogsTextBox;
       'blogs.text-editor': BlogsTextEditor;
+      'demo.demo-component': DemoDemoComponent;
       'footer.footer-links': FooterFooterLinks;
       'footer.social-media': FooterSocialMedia;
       'header.header-company': HeaderHeaderCompany;

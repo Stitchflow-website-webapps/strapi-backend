@@ -774,6 +774,34 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiScheduleDemoScheduleDemo extends Struct.SingleTypeSchema {
+  collectionName: 'schedule_demos';
+  info: {
+    displayName: 'ScheduleDemo';
+    pluralName: 'schedule-demos';
+    singularName: 'schedule-demo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DemoLink: Schema.Attribute.Component<'demo.demo-component', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::schedule-demo.schedule-demo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSecuritySecurity extends Struct.SingleTypeSchema {
   collectionName: 'securities';
   info: {
@@ -1413,6 +1441,7 @@ declare module '@strapi/strapi' {
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::platform.platform': ApiPlatformPlatform;
       'api::resource.resource': ApiResourceResource;
+      'api::schedule-demo.schedule-demo': ApiScheduleDemoScheduleDemo;
       'api::security.security': ApiSecuritySecurity;
       'api::slug.slug': ApiSlugSlug;
       'api::terms-or-policy.terms-or-policy': ApiTermsOrPolicyTermsOrPolicy;

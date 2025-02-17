@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "schedule_demos",
+  "info": {
+    "singularName": "schedule-demo",
+    "pluralName": "schedule-demos",
+    "displayName": "ScheduleDemo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DemoLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "demo.demo-component"
+    }
+  }
+}
