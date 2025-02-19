@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_integration_connector_grid_sections",
+  "info": {
+    "displayName": "ConnectorGridSection"
+  },
+  "options": {},
+  "attributes": {
+    "CtaConnectorsImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
