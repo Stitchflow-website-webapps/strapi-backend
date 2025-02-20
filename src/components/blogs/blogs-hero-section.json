@@ -24,6 +24,21 @@
     "urlSlug": {
       "type": "string",
       "required": true
+    },
+    "isBanner": {
+      "type": "boolean"
+    },
+    "isPopularArticle": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "string"
+    },
+    "modifiedDate": {
+      "type": "date"
+    },
+    "readTime": {
+      "type": "string"
     }
   }
 }

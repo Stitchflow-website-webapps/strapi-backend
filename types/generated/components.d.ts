@@ -85,8 +85,13 @@ export interface BlogsBlogsHeroSection extends Struct.ComponentSchema {
   };
   attributes: {
     bannerImage: Schema.Attribute.Media<'images' | 'files'>;
+    category: Schema.Attribute.String;
     heading: Schema.Attribute.String;
+    isBanner: Schema.Attribute.Boolean;
+    isPopularArticle: Schema.Attribute.Boolean;
+    modifiedDate: Schema.Attribute.Date;
     postedDate: Schema.Attribute.Date;
+    readTime: Schema.Attribute.String;
     urlSlug: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -99,6 +104,17 @@ export interface BlogsContentSection extends Struct.ComponentSchema {
   attributes: {
     contentTextOrImage: Schema.Attribute.Component<'blogs.text-editor', true>;
     heading: Schema.Attribute.Component<'blogs.text-box', true>;
+  };
+}
+
+export interface BlogsFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_faq_sections';
+  info: {
+    displayName: 'FAQ Section';
+  };
+  attributes: {
+    faqAnswer: Schema.Attribute.Text;
+    faqQuestion: Schema.Attribute.String;
   };
 }
 
@@ -703,6 +719,18 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSocialMedia extends Struct.ComponentSchema {
+  collectionName: 'components_shared_social_medias';
+  info: {
+    displayName: 'Social Media';
+  };
+  attributes: {
+    mediaIcon: Schema.Attribute.Media<'images' | 'files'>;
+    mediaLink: Schema.Attribute.String;
+    mediaText: Schema.Attribute.String;
+  };
+}
+
 export interface TermsAndPrivacyContentListComponent
   extends Struct.ComponentSchema {
   collectionName: 'components_terms_and_privacy_content_list_components';
@@ -768,6 +796,7 @@ declare module '@strapi/strapi' {
       'about.value-section': AboutValueSection;
       'blogs.blogs-hero-section': BlogsBlogsHeroSection;
       'blogs.content-section': BlogsContentSection;
+      'blogs.faq-section': BlogsFaqSection;
       'blogs.text-box': BlogsTextBox;
       'blogs.text-editor': BlogsTextEditor;
       'demo.demo-component': DemoDemoComponent;
@@ -812,6 +841,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.social-media': SharedSocialMedia;
       'terms-and-privacy.content-list-component': TermsAndPrivacyContentListComponent;
       'terms-and-privacy.content-list-section': TermsAndPrivacyContentListSection;
       'terms-and-privacy.hero-section': TermsAndPrivacyHeroSection;
