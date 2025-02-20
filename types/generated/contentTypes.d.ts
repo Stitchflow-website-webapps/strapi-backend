@@ -542,38 +542,6 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
-  collectionName: 'globals';
-  info: {
-    description: 'Define global settings';
-    displayName: 'Global';
-    pluralName: 'globals';
-    singularName: 'global';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
-    favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::global.global'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    siteName: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -634,6 +602,10 @@ export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
   };
   attributes: {
     CategorySec: Schema.Attribute.Component<'integration.category', true>;
+    ConnectorGridSec: Schema.Attribute.Component<
+      'integration.connector-grid-section',
+      false
+    >;
     ConnectorImageSec: Schema.Attribute.Component<
       'integration.connector-image',
       true
@@ -1439,7 +1411,6 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
-      'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::integration.integration': ApiIntegrationIntegration;
       'api::navbar.navbar': ApiNavbarNavbar;

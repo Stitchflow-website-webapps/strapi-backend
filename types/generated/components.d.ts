@@ -350,6 +350,17 @@ export interface IntegrationCategory extends Struct.ComponentSchema {
   };
 }
 
+export interface IntegrationConnectorGridSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_integration_connector_grid_sections';
+  info: {
+    displayName: 'ConnectorGridSection';
+  };
+  attributes: {
+    CtaConnectorsImage: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
 export interface IntegrationConnectorImage extends Struct.ComponentSchema {
   collectionName: 'components_integration_connector_images';
   info: {
@@ -816,6 +827,7 @@ declare module '@strapi/strapi' {
       'home.home-pricing-sec': HomeHomePricingSec;
       'home.home-stich-works': HomeHomeStichWorks;
       'integration.category': IntegrationCategory;
+      'integration.connector-grid-section': IntegrationConnectorGridSection;
       'integration.connector-image': IntegrationConnectorImage;
       'integration.integration': IntegrationIntegration;
       'platform.feature-sec': PlatformFeatureSec;
