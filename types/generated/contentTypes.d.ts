@@ -461,7 +461,6 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.String;
-    linkedInURL: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -472,6 +471,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String;
     slugs: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'>;
+    socialMediaList: Schema.Attribute.Component<'shared.social-media', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -833,6 +833,8 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    blog: Schema.Attribute.Relation<'manyToOne', 'api::slug.slug'>;
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -843,12 +845,14 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    faqSection: Schema.Attribute.Component<'blogs.faq-section', true>;
     heroSection: Schema.Attribute.Component<'blogs.blogs-hero-section', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'> &
       Schema.Attribute.Private;
     metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
+    socialMediaList: Schema.Attribute.Component<'shared.social-media', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
