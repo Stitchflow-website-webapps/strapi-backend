@@ -13,12 +13,3 @@
 //         console.log("Custom CKEditor Plugin Loaded in Strapi v5");
 //     },
 // };
-
-export default {
-    config: {
-        locales: ["en"],
-    },
-    bootstrap(app) {
-        console.log("Admin panel is loaded");
-    },
-};  
