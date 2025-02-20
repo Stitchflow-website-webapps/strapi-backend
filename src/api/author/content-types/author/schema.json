@@ -45,8 +45,10 @@
       "repeatable": true,
       "component": "shared.call-schedule-button"
     },
-    "linkedInURL": {
-      "type": "string"
+    "socialMediaList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-media"
     }
   }
 }
