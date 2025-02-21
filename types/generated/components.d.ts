@@ -91,6 +91,7 @@ export interface BlogsBlogsHeroSection extends Struct.ComponentSchema {
     isPopularArticle: Schema.Attribute.Boolean;
     modifiedDate: Schema.Attribute.Date;
     postedDate: Schema.Attribute.Date;
+    postedSummary: Schema.Attribute.Text;
     readTime: Schema.Attribute.String;
     urlSlug: Schema.Attribute.String & Schema.Attribute.Required;
   };
