@@ -39,6 +39,9 @@
     },
     "readTime": {
       "type": "string"
+    },
+    "postedSummary": {
+      "type": "text"
     }
   }
 }
