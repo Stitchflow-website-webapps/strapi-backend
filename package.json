@@ -14,11 +14,12 @@
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^5.0.1",
     "@strapi/plugin-cloud": "5.8.0",
-    "@strapi/plugin-seo": "^2.0.6",
     "@strapi/plugin-color-picker": "^5.9.0",
+    "@strapi/plugin-seo": "^2.0.6",
     "@strapi/plugin-users-permissions": "5.8.0",
     "@strapi/strapi": "5.8.0",
     "better-sqlite3": "11.3.0",
+    "ckeditor5": "^44.2.1",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
     "react": "^18.0.0",
