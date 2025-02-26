@@ -49,6 +49,11 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.social-media"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
