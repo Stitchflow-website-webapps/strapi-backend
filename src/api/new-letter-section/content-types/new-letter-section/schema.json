@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "new_letter_sections",
+  "info": {
+    "singularName": "new-letter-section",
+    "pluralName": "new-letter-sections",
+    "displayName": "New Letter Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "newsLetterHeading": {
+      "type": "string"
+    },
+    "subscribeText": {
+      "type": "string"
+    },
+    "newsLetterdescription": {
+      "type": "richtext"
+    }
+  }
+}

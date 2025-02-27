@@ -665,6 +665,38 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNewLetterSectionNewLetterSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'new_letter_sections';
+  info: {
+    description: '';
+    displayName: 'New Letter Section';
+    pluralName: 'new-letter-sections';
+    singularName: 'new-letter-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::new-letter-section.new-letter-section'
+    > &
+      Schema.Attribute.Private;
+    newsLetterdescription: Schema.Attribute.RichText;
+    newsLetterHeading: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    subscribeText: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   collectionName: 'platforms';
   info: {
@@ -1415,6 +1447,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::integration.integration': ApiIntegrationIntegration;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::new-letter-section.new-letter-section': ApiNewLetterSectionNewLetterSection;
       'api::platform.platform': ApiPlatformPlatform;
       'api::resource.resource': ApiResourceResource;
       'api::schedule-demo.schedule-demo': ApiScheduleDemoScheduleDemo;
