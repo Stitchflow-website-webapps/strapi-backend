@@ -866,8 +866,8 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    blog: Schema.Attribute.Relation<'manyToOne', 'api::slug.slug'>;
     blogs: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'>;
+    blogTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
