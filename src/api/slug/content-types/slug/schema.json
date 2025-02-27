@@ -35,18 +35,6 @@
       "repeatable": false,
       "component": "shared.seo"
     },
-    "blogs": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::slug.slug",
-      "mappedBy": "blog"
-    },
-    "blog": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::slug.slug",
-      "inversedBy": "blogs"
-    },
     "socialMediaList": {
       "type": "component",
       "repeatable": true,
@@ -57,6 +45,14 @@
       "type": "component",
       "repeatable": true,
       "component": "blogs.faq-section"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slug.slug"
+    },
+    "blogTitle": {
+      "type": "string"
     }
   }
 }
