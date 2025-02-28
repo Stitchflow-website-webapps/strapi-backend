@@ -456,7 +456,6 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   attributes: {
     aboutAuthor: Schema.Attribute.RichText;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    company: Schema.Attribute.Component<'shared.call-schedule-button', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
