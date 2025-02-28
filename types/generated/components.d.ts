@@ -734,12 +734,12 @@ export interface SharedSlider extends Struct.ComponentSchema {
 export interface SharedSocialMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_social_medias';
   info: {
+    description: '';
     displayName: 'Social Media';
   };
   attributes: {
-    mediaIcon: Schema.Attribute.Media<'images' | 'files'>;
     mediaLink: Schema.Attribute.String;
-    mediaText: Schema.Attribute.String;
+    mediaList: Schema.Attribute.Enumeration<['Twitter', 'LinkedIn']>;
   };
 }
 

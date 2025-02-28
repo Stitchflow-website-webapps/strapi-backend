@@ -40,11 +40,6 @@
     "role": {
       "type": "string"
     },
-    "company": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.call-schedule-button"
-    },
     "socialMediaList": {
       "type": "component",
       "repeatable": true,
