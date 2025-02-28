@@ -48,6 +48,9 @@
     },
     "blogTitle": {
       "type": "string"
+    },
+    "isPublish": {
+      "type": "boolean"
     }
   }
 }
