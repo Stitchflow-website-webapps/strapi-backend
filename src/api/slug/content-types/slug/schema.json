@@ -35,11 +35,6 @@
       "repeatable": false,
       "component": "shared.seo"
     },
-    "socialMediaList": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.social-media"
-    },
     "faqSection": {
       "displayName": "FAQ Section",
       "type": "component",

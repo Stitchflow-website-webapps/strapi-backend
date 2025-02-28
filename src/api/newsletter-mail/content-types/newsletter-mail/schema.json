@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletter_mails",
+  "info": {
+    "singularName": "newsletter-mail",
+    "pluralName": "newsletter-mails",
+    "displayName": "NewsletterMail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "unique": false,
+      "required": true
+    },
+    "subscribedAt": {
+      "type": "date"
+    }
+  }
+}

@@ -697,6 +697,37 @@ export interface ApiNewLetterSectionNewLetterSection
   };
 }
 
+export interface ApiNewsletterMailNewsletterMail
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'newsletter_mails';
+  info: {
+    description: '';
+    displayName: 'NewsletterMail';
+    pluralName: 'newsletter-mails';
+    singularName: 'newsletter-mail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newsletter-mail.newsletter-mail'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subscribedAt: Schema.Attribute.Date;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   collectionName: 'platforms';
   info: {
@@ -885,7 +916,6 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
-    socialMediaList: Schema.Attribute.Component<'shared.social-media', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1448,6 +1478,7 @@ declare module '@strapi/strapi' {
       'api::integration.integration': ApiIntegrationIntegration;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::new-letter-section.new-letter-section': ApiNewLetterSectionNewLetterSection;
+      'api::newsletter-mail.newsletter-mail': ApiNewsletterMailNewsletterMail;
       'api::platform.platform': ApiPlatformPlatform;
       'api::resource.resource': ApiResourceResource;
       'api::schedule-demo.schedule-demo': ApiScheduleDemoScheduleDemo;
