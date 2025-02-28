@@ -670,7 +670,7 @@ export interface ApiNewLetterSectionNewLetterSection
   collectionName: 'new_letter_sections';
   info: {
     description: '';
-    displayName: 'New Letter Section';
+    displayName: 'New Letter';
     pluralName: 'new-letter-sections';
     singularName: 'new-letter-section';
   };
@@ -911,6 +911,7 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
       >;
     faqSection: Schema.Attribute.Component<'blogs.faq-section', true>;
     heroSection: Schema.Attribute.Component<'blogs.blogs-hero-section', false>;
+    isPublish: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'> &
       Schema.Attribute.Private;
