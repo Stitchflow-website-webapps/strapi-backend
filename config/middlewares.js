@@ -1,20 +1,25 @@
 module.exports = [
-  'strapi::logger',
-  'strapi::errors',
-  'strapi::security',
-  {
-    name: 'strapi::cors',
-    config: {
-      enabled: true,
-      headers: '*',
-      origin: ['http://localhost:3000', 'https://website-steel-xi-84.vercel.app', 'https://www.stitchflow.com', "https://stitchflow.com", "https://www.stitchflow.io", "https://stitchflow.io"], // Add your frontend domain
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    "strapi::logger",
+    "strapi::errors",
+    "strapi::security",
+    {
+        name: "strapi::cors",
+        config: {
+            enabled: true,
+            headers: "*",
+            origin: [
+                "http://localhost:3000",
+                "https://website-steel-xi-84.vercel.app",
+                "https://www.stitchflow.com/",
+                "https://website-f69xdhe07-websitestitchflowios-projects.vercel.app",
+            ], // Add your frontend domain
+            methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        },
     },
-  },
-  'strapi::poweredBy',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
+    "strapi::poweredBy",
+    "strapi::query",
+    "strapi::body",
+    "strapi::session",
+    "strapi::favicon",
+    "strapi::public",
 ];
