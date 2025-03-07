@@ -812,6 +812,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
 export interface ApiScheduleDemoScheduleDemo extends Struct.SingleTypeSchema {
   collectionName: 'schedule_demos';
   info: {
+    description: '';
     displayName: 'ScheduleDemo';
     pluralName: 'schedule-demos';
     singularName: 'schedule-demo';
@@ -830,6 +831,7 @@ export interface ApiScheduleDemoScheduleDemo extends Struct.SingleTypeSchema {
       'api::schedule-demo.schedule-demo'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
