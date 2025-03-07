@@ -456,7 +456,6 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   attributes: {
     aboutAuthor: Schema.Attribute.RichText;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    company: Schema.Attribute.Component<'shared.call-schedule-button', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -467,6 +466,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
       'api::author.author'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String;
@@ -664,6 +664,69 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNewLetterSectionNewLetterSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'new_letter_sections';
+  info: {
+    description: '';
+    displayName: 'New Letter';
+    pluralName: 'new-letter-sections';
+    singularName: 'new-letter-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::new-letter-section.new-letter-section'
+    > &
+      Schema.Attribute.Private;
+    newsLetterdescription: Schema.Attribute.RichText;
+    newsLetterHeading: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    subscribeText: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewsletterMailNewsletterMail
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'newsletter_mails';
+  info: {
+    description: '';
+    displayName: 'NewsletterMail';
+    pluralName: 'newsletter-mails';
+    singularName: 'newsletter-mail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newsletter-mail.newsletter-mail'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subscribedAt: Schema.Attribute.Date;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   collectionName: 'platforms';
   info: {
@@ -749,6 +812,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
 export interface ApiScheduleDemoScheduleDemo extends Struct.SingleTypeSchema {
   collectionName: 'schedule_demos';
   info: {
+    description: '';
     displayName: 'ScheduleDemo';
     pluralName: 'schedule-demos';
     singularName: 'schedule-demo';
@@ -767,6 +831,7 @@ export interface ApiScheduleDemoScheduleDemo extends Struct.SingleTypeSchema {
       'api::schedule-demo.schedule-demo'
     > &
       Schema.Attribute.Private;
+    metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -833,8 +898,8 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    blog: Schema.Attribute.Relation<'manyToOne', 'api::slug.slug'>;
     blogs: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'>;
+    blogTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -847,12 +912,12 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
       >;
     faqSection: Schema.Attribute.Component<'blogs.faq-section', true>;
     heroSection: Schema.Attribute.Component<'blogs.blogs-hero-section', false>;
+    isPublish: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::slug.slug'> &
       Schema.Attribute.Private;
     metaData: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
-    socialMediaList: Schema.Attribute.Component<'shared.social-media', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1414,6 +1479,8 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::integration.integration': ApiIntegrationIntegration;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::new-letter-section.new-letter-section': ApiNewLetterSectionNewLetterSection;
+      'api::newsletter-mail.newsletter-mail': ApiNewsletterMailNewsletterMail;
       'api::platform.platform': ApiPlatformPlatform;
       'api::resource.resource': ApiResourceResource;
       'api::schedule-demo.schedule-demo': ApiScheduleDemoScheduleDemo;
