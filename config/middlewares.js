@@ -10,8 +10,8 @@ module.exports = [
             origin: [
                 "http://localhost:3000",
                 "https://website-steel-xi-84.vercel.app",
-                "https://www.stitchflow.com/",
-                "https://website-b1w7coin8-websitestitchflowios-projects.vercel.app",
+                "https://www.stitchflow.com",
+                "https://website-7i9i66ly2-websitestitchflowios-projects.vercel.app",
             ], // Add your frontend domain
             methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         },
