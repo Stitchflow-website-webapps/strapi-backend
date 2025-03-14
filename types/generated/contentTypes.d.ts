@@ -669,7 +669,7 @@ export interface ApiNewLetterSectionNewLetterSection
   collectionName: 'new_letter_sections';
   info: {
     description: '';
-    displayName: 'NewsLetter';
+    displayName: 'Newsletter';
     pluralName: 'new-letter-sections';
     singularName: 'new-letter-section';
   };
