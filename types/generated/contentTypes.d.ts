@@ -373,7 +373,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
     description: '';
-    displayName: 'About';
+    displayName: 'About Page';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -403,50 +403,11 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
-  collectionName: 'articles';
-  info: {
-    description: 'Create your blog content';
-    displayName: 'Article';
-    pluralName: 'articles';
-    singularName: 'article';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::article.article'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Create authors for your content';
-    displayName: 'Author';
+    displayName: 'Authors';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -478,43 +439,11 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
-  info: {
-    description: 'Organize your content into categories';
-    displayName: 'Category';
-    pluralName: 'categories';
-    singularName: 'category';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
     description: '';
-    displayName: 'Footer';
+    displayName: 'Global Footer';
     pluralName: 'footers';
     singularName: 'footer';
   };
@@ -546,7 +475,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
     description: '';
-    displayName: 'Home';
+    displayName: 'Website Homepage';
     pluralName: 'homes';
     singularName: 'home';
   };
@@ -593,7 +522,7 @@ export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
   collectionName: 'integrations';
   info: {
     description: '';
-    displayName: 'Integration';
+    displayName: 'Integrations';
     pluralName: 'integrations';
     singularName: 'integration';
   };
@@ -632,7 +561,7 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
     description: '';
-    displayName: 'Navbar';
+    displayName: 'Navigation Menu';
     pluralName: 'navbars';
     singularName: 'navbar';
   };
@@ -669,7 +598,7 @@ export interface ApiNewLetterSectionNewLetterSection
   collectionName: 'new_letter_sections';
   info: {
     description: '';
-    displayName: 'Newsletter';
+    displayName: 'Newsletter Form';
     pluralName: 'new-letter-sections';
     singularName: 'new-letter-section';
   };
@@ -701,7 +630,7 @@ export interface ApiNewsletterMailNewsletterMail
   collectionName: 'newsletter_mails';
   info: {
     description: '';
-    displayName: 'NewsletterMail';
+    displayName: 'Newsletter Submissions';
     pluralName: 'newsletter-mails';
     singularName: 'newsletter-mail';
   };
@@ -775,7 +704,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
   collectionName: 'resources';
   info: {
     description: '';
-    displayName: 'Resource';
+    displayName: 'Blog Home';
     pluralName: 'resources';
     singularName: 'resource';
   };
@@ -813,7 +742,7 @@ export interface ApiScheduleDemoScheduleDemo extends Struct.SingleTypeSchema {
   collectionName: 'schedule_demos';
   info: {
     description: '';
-    displayName: 'ScheduleDemo';
+    displayName: 'Demo Request Form';
     pluralName: 'schedule-demos';
     singularName: 'schedule-demo';
   };
@@ -889,7 +818,7 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
   collectionName: 'slugs';
   info: {
     description: '';
-    displayName: 'Blog';
+    displayName: 'Blogs';
     pluralName: 'slugs';
     singularName: 'slug';
   };
@@ -1503,9 +1432,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
-      'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
-      'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
       'api::integration.integration': ApiIntegrationIntegration;
