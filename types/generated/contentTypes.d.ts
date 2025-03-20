@@ -373,7 +373,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
     description: '';
-    displayName: 'About';
+    displayName: 'About Page';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -407,7 +407,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Create authors for your content';
-    displayName: 'Author';
+    displayName: 'Authors';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -443,7 +443,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
     description: '';
-    displayName: 'Footer';
+    displayName: 'Global Footer';
     pluralName: 'footers';
     singularName: 'footer';
   };
@@ -475,7 +475,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
     description: '';
-    displayName: 'Home';
+    displayName: 'Website Homepage';
     pluralName: 'homes';
     singularName: 'home';
   };
@@ -522,7 +522,7 @@ export interface ApiIntegrationIntegration extends Struct.SingleTypeSchema {
   collectionName: 'integrations';
   info: {
     description: '';
-    displayName: 'Integration';
+    displayName: 'Integrations';
     pluralName: 'integrations';
     singularName: 'integration';
   };
@@ -561,7 +561,7 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
     description: '';
-    displayName: 'Navbar';
+    displayName: 'Navigation Menu';
     pluralName: 'navbars';
     singularName: 'navbar';
   };
@@ -598,7 +598,7 @@ export interface ApiNewLetterSectionNewLetterSection
   collectionName: 'new_letter_sections';
   info: {
     description: '';
-    displayName: 'Newsletter';
+    displayName: 'Newsletter Form';
     pluralName: 'new-letter-sections';
     singularName: 'new-letter-section';
   };
@@ -630,7 +630,7 @@ export interface ApiNewsletterMailNewsletterMail
   collectionName: 'newsletter_mails';
   info: {
     description: '';
-    displayName: 'NewsletterMail';
+    displayName: 'Newsletter Submissions';
     pluralName: 'newsletter-mails';
     singularName: 'newsletter-mail';
   };
@@ -704,7 +704,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
   collectionName: 'resources';
   info: {
     description: '';
-    displayName: 'Resource';
+    displayName: 'Blog Home';
     pluralName: 'resources';
     singularName: 'resource';
   };
@@ -742,7 +742,7 @@ export interface ApiScheduleDemoScheduleDemo extends Struct.SingleTypeSchema {
   collectionName: 'schedule_demos';
   info: {
     description: '';
-    displayName: 'ScheduleDemo';
+    displayName: 'Demo Request Form';
     pluralName: 'schedule-demos';
     singularName: 'schedule-demo';
   };
@@ -818,7 +818,7 @@ export interface ApiSlugSlug extends Struct.CollectionTypeSchema {
   collectionName: 'slugs';
   info: {
     description: '';
-    displayName: 'Blog';
+    displayName: 'Blogs';
     pluralName: 'slugs';
     singularName: 'slug';
   };
