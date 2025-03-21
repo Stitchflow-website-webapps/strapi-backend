@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "resources",
+  "info": {
+    "singularName": "resource",
+    "pluralName": "resources",
+    "displayName": "Blog Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ResourceMainSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "resource.resource"
+    },
+    "ResourceAfterHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "resource.resource-after-hero-sec"
+    },
+    "SubCategorySection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "resource.blog-section"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

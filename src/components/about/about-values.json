@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_about_values",
+  "info": {
+    "displayName": "About Values",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ValuesTittle": {
+      "type": "string"
+    },
+    "ValuesHeading": {
+      "type": "string"
+    },
+    "ValuesList": {
+      "displayName": "Value section",
+      "type": "component",
+      "repeatable": true,
+      "component": "about.value-section"
+    }
+  }
+}

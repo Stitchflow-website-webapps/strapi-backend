@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_value_sections",
+  "info": {
+    "displayName": "Value Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ValuesListHeading": {
+      "type": "string"
+    },
+    "ValuesListDescription": {
+      "type": "text"
+    },
+    "ValuesImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

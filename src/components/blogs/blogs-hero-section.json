@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_blogs_blogs_hero_sections",
+  "info": {
+    "displayName": "Blogs Hero Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "bannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "postedDate": {
+      "type": "date"
+    },
+    "urlSlug": {
+      "type": "string",
+      "required": true
+    },
+    "isBanner": {
+      "type": "boolean"
+    },
+    "isPopularArticle": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "string"
+    },
+    "modifiedDate": {
+      "type": "date"
+    },
+    "readTime": {
+      "type": "string"
+    },
+    "postedSummary": {
+      "type": "text"
+    }
+  }
+}

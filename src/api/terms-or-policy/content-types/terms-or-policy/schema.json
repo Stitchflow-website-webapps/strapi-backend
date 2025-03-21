@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "terms_or_policies",
+  "info": {
+    "singularName": "terms-or-policy",
+    "pluralName": "terms-or-policies",
+    "displayName": "TermsOrPolicy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroHeading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "terms-and-privacy.hero-section"
+    },
+    "contentSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "terms-and-privacy.content-list-section"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

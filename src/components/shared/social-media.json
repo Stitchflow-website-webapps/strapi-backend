@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_social_medias",
+  "info": {
+    "displayName": "Social Media",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mediaLink": {
+      "type": "string"
+    },
+    "mediaList": {
+      "type": "enumeration",
+      "enum": [
+        "Twitter",
+        "LinkedIn"
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_demo_demo_components",
+  "info": {
+    "displayName": "DemoComponent"
+  },
+  "options": {},
+  "attributes": {
+    "CalendlyLink": {
+      "type": "text"
+    }
+  }
+}

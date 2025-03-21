@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_resource_resources",
+  "info": {
+    "displayName": "Resource",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ResourceHeading": {
+      "type": "text"
+    },
+    "ContentSec": {
+      "type": "blocks"
+    }
+  }
+}

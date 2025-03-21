@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_platform_titles",
+  "info": {
+    "displayName": "PlatformTitle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "PlatformTitle": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

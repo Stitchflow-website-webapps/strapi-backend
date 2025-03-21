@@ -1,0 +1,81 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Website Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HomePagePara": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-page"
+    },
+    "ImageSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-after-hero"
+    },
+    "WorkFlowSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-stich-works"
+    },
+    "PreciseSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-precise-sec"
+    },
+    "ManualSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-manual-sec"
+    },
+    "BenifitSecTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-benifit-sec"
+    },
+    "BenifitCardSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.benifit-card"
+    },
+    "BenifitHiddenSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-benifit-hidden-sec"
+    },
+    "PricingSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-pricing-sec"
+    },
+    "ActionPart": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-action-sec"
+    },
+    "ActionCardSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.home-action-card"
+    },
+    "CallScheduleSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-schedule-demo"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

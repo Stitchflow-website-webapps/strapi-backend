@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_terms_and_privacy_content_list_components",
+  "info": {
+    "displayName": "Content List Component",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "listHeading": {
+      "type": "richtext",
+      "required": true
+    },
+    "paragraphList": {
+      "displayName": "paragraphList",
+      "type": "component",
+      "repeatable": true,
+      "component": "terms-and-privacy.paragraph-list"
+    }
+  }
+}

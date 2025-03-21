@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_integration_connector_images",
+  "info": {
+    "displayName": "ConnectorImage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ImageText": {
+      "type": "string"
+    },
+    "ImageTitle": {
+      "type": "string"
+    },
+    "CategoryType": {
+      "type": "enumeration",
+      "enum": [
+        "Networking",
+        "Entitlements",
+        "Productivity",
+        "Devices",
+        "Identity",
+        "Ticketing"
+      ],
+      "default": "Networking",
+      "required": true
+    }
+  }
+}

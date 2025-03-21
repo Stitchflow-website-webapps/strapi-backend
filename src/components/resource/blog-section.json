@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_resource_blog_sections",
+  "info": {
+    "displayName": "BlogSection"
+  },
+  "options": {},
+  "attributes": {
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Blog",
+        "Case Study"
+      ],
+      "required": true,
+      "default": "Blog"
+    },
+    "SubCategory": {
+      "type": "enumeration",
+      "enum": [
+        "Product",
+        "Company",
+        "SaaS Management"
+      ],
+      "required": true,
+      "default": "Product"
+    }
+  }
+}

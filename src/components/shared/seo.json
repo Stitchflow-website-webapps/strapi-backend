@@ -20,7 +20,15 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "googleVerification": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }

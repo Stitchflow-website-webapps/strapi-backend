@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "securities",
+  "info": {
+    "singularName": "security",
+    "pluralName": "securities",
+    "displayName": "Security",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SecurityHeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "security.security"
+    },
+    "SecurityCardSec": {
+      "type": "component",
+      "repeatable": true,
+      "component": "security.security-after-hero-sec"
+    },
+    "SecurityProcessorSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "security.security-sub-processor"
+    },
+    "FeatureSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "security.security-feature-sec"
+    },
+    "WhitePaperSec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "security.white-paper-sec"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_home_home_stich_works",
+  "info": {
+    "displayName": "HomeStichWorks",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "StitchWorkHeading": {
+      "type": "text"
+    },
+    "StichWorkImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "StichWorkPara1": {
+      "type": "text"
+    },
+    "StichWorkPara2": {
+      "type": "text"
+    }
+  }
+}

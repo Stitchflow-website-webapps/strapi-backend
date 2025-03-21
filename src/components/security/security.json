@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_security_securities",
+  "info": {
+    "displayName": "Security"
+  },
+  "options": {},
+  "attributes": {
+    "SecurityHeading": {
+      "type": "string"
+    },
+    "SecurityDescription": {
+      "type": "string"
+    },
+    "SOCImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "CCPAImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "GDPRImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

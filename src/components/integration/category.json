@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_integration_categories",
+  "info": {
+    "displayName": "Category",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CategoryList": {
+      "type": "string"
+    }
+  }
+}
