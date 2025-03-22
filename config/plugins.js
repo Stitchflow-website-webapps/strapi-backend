@@ -1,12 +1,10 @@
-// module.exports = () => ({});
-
 module.exports = ({ env }) => ({
     upload: {
         config: {
             providerOptions: {
-                baseUrl: "https://content.stitchflow.com", // ✅ Ensure this is correct
+                baseUrl: "https://content.stitchflow.com",
                 localServer: {
-                    url: env("PUBLIC_URL", "https://content.stitchflow.com"), // ✅ Make sure this matches
+                    url: env("PUBLIC_URL", "https://content.stitchflow.com"),
                 },
             },
         },
