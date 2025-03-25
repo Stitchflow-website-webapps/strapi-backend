@@ -16,6 +16,32 @@ module.exports = [
             methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         },
     },
+    {
+        name: 'strapi::security',
+        config: {
+            contentSecurityPolicy: {
+                useDefaults: true,
+                directives: {
+                    'connect-src': ["'self'", 'https:'],
+                    'img-src': [
+                        "'self'",
+                        'data:',
+                        'blob:',
+                        'market-assets.strapi.io',
+                        "https://stitchflow.b-cdn.net"
+                    ],
+                    'media-src': [
+                        "'self'",
+                        'data:',
+                        'blob:',
+                        'market-assets.strapi.io',
+                        "https://stitchflow.b-cdn.net"
+                    ],
+                    upgradeInsecureRequests: null,
+                },
+            },
+        },
+    },
     "strapi::poweredBy",
     "strapi::query",
     "strapi::body",
