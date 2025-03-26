@@ -42,14 +42,14 @@ const bootstrap = async ({strapi}) => {
 
             async afterCreate(event) {
                 const {result} = event;
-                const slug = result.slug || result.id;
+                const slug = result.slug ? result.slug : result.title?.toLowerCase().replace(/\s+/g, "-") || result.id;
                 const url = `https://www.stitchflow.com/${slug}`;
                 await submitToIndexNow(url);
             },
 
             async afterUpdate(event) {
                 const {result} = event;
-                const slug = result.slug || result.id;
+                const slug = result.slug ? result.slug : result.title?.toLowerCase().replace(/\s+/g, "-") || result.id;
                 const url = `https://www.stitchflow.com/${slug}`;
                 await submitToIndexNow(url);
             },
