@@ -50,10 +50,6 @@ const bootstrap = async ({strapi}) => {
                     .replace(/[^a-z0-9-]/g, "");
                 }
 
-                if (!slug) {
-                    strapi.log.error(`❌ Could not generate a slug for ${JSON.stringify(result)}`);
-                    return;
-                }
                 // const slug = result.slug ? result.slug : result.title?.toLowerCase().replace(/\s+/g, "-") || result.id;
                 const url = `https://www.stitchflow.com/${slug}`;
                 await submitToIndexNow(url);
@@ -69,10 +65,6 @@ const bootstrap = async ({strapi}) => {
                     .replace(/[^a-z0-9-]/g, "");
                 }
 
-                if (!slug) {
-                    strapi.log.error(`❌ Could not generate a slug for ${JSON.stringify(result)}`);
-                    return;
-                }
                 // const slug = result.slug ? result.slug : result.title?.toLowerCase().replace(/\s+/g, "-") || result.id;
                 const url = `https://www.stitchflow.com/${slug}`;
                 await submitToIndexNow(url);
