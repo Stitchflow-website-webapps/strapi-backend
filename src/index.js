@@ -34,7 +34,20 @@ const bootstrap = async ({strapi}) => {
     };
 
     // Monitor content types (adjust as needed)
-    const contentTypes = ["api::article.article", "api::page.page"];
+    const contentTypes = [
+        "api::article.article",
+        "api::page.page",
+        "api::about-page.about-page",
+        "api::blog-home.blog-home",
+        "api::demo-request-form.demo-request-form",
+        "api::global-footer.global-footer",
+        "api::integrations.integrations",
+        "api::navigation-menu.navigation-menu",
+        "api::newsletter-form.newsletter-form",
+        "api::platform.platform",
+        "api::security.security",
+        "api::website-homepage.website-homepage",
+    ];
 
     contentTypes.forEach((contentType) => {
         strapi.db.lifecycles.subscribe({
