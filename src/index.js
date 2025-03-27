@@ -12,24 +12,30 @@ const bootstrap = async ({strapi}) => {
             return false;
         }
         const host = "www.stitchflow.com";
-
-        try {
-            const response = await fetch("https://www.bing.com/indexnow", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({host, key, urlList: urls}),
-            });
-            if (response.ok) {
-                strapi.log.info(`✅ IndexNow submitted URL: ${urls}`);
-            } else {
-                strapi.log.error(`❌ IndexNow submission failed. Status: ${response.status}`);
+        const batchSize = 100;
+        for (let i = 0; i < urls.length; i += batchSize) {
+            const batch = urls.slice(i, i + batchSize);
+            try {
+                const response = await fetch("https://www.bing.com/indexnow", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({host, key, urlList: batch}),
+                });
+                const responseBody = await response.text();
+                if (response.ok) {
+                    strapi.log.info(`✅ IndexNow submitted URL: ${urls}`);
+                } else {
+                    strapi.log.error(
+                        `❌ IndexNow submission failed. Status: ${response.status}. Response: ${responseBody}`
+                    );
+                }
+                return response.ok;
+            } catch (error) {
+                strapi.log.error("❌ IndexNow submission failed:", error);
+                return false;
             }
-            return response.ok;
-        } catch (error) {
-            strapi.log.error("❌ IndexNow submission failed:", error);
-            return false;
         }
     };
 
@@ -64,13 +70,21 @@ const bootstrap = async ({strapi}) => {
                 if (!slug && result.heading) {
                     slug = result.heading
                     .toLowerCase()
+                    .trim()
                     .replace(/\s+/g, "-")
                     .replace(/[^a-z0-9-]/g, "");
                 }
 
+                if (!slug) {
+                    slug = result.id ? `item-${result.id}` : "unknown";
+                }
                 // const slug = result.slug ? result.slug : result.title?.toLowerCase().replace(/\s+/g, "-") || result.id;
                 const url = `https://www.stitchflow.com/${slug}`;
-                await submitToIndexNow(url);
+                if (slug && slug !== "unknown") {
+                    await submitToIndexNow(url);
+                } else {
+                    strapi.log.warn(`⚠️ Skipping IndexNow submission: Missing slug for ${contentType}`);
+                }
             },
 
             async afterUpdate(event) {
@@ -79,13 +93,21 @@ const bootstrap = async ({strapi}) => {
                 if (!slug && result.heading) {
                     slug = result.heading
                     .toLowerCase()
+                    .trim()
                     .replace(/\s+/g, "-")
                     .replace(/[^a-z0-9-]/g, "");
                 }
 
+                if (!slug) {
+                    slug = result.id ? `item-${result.id}` : "unknown";
+                }
                 // const slug = result.slug ? result.slug : result.title?.toLowerCase().replace(/\s+/g, "-") || result.id;
                 const url = `https://www.stitchflow.com/${slug}`;
-                await submitToIndexNow(url);
+                if (slug && slug !== "unknown") {
+                    await submitToIndexNow(url);
+                } else {
+                    strapi.log.warn(`⚠️ Skipping IndexNow submission: Missing slug for ${contentType}`);
+                }
             },
         });
     });
