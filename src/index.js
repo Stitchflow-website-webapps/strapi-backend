@@ -35,6 +35,11 @@ const bootstrap = async ({strapi}) => {
 
     // Monitor content types (adjust as needed)
     const contentTypes = [
+        "api::authors.authors",
+        "api::blogs.blogs",
+        "api::newsletter-submissions.newsletter-submissions",
+        "api::terms-or-policy.terms-or-policy",
+        "api::user.user",
         "api::article.article",
         "api::page.page",
         "api::about-page.about-page",
