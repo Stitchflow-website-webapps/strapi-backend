@@ -6,7 +6,7 @@ const bootstrap = async ({strapi}) => {
             urls = [urls];
         }
 
-        const key = process.env.INDEXNOW_KEY || "735044fce36945f984f424d9bb5d28b2";
+        const key = process.env.INDEXNOW_KEY || "";
         if (!key) {
             strapi.log.error("❌ INDEXNOW_KEY is missing in environment variables.");
             return false;
