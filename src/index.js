@@ -7,14 +7,17 @@ const bootstrap = async ({strapi}) => {
         }
 
         const key = process.env.INDEXNOW_KEY || "";
+        const host = "www.stitchflow.com";
         if (!key) {
             strapi.log.error("❌ INDEXNOW_KEY is missing in environment variables.");
             return false;
         }
-        const host = "www.stitchflow.com";
+
         const batchSize = 100;
         for (let i = 0; i < urls.length; i += batchSize) {
             const batch = urls.slice(i, i + batchSize);
+
+            strapi.log.info(`🚀 Submitting to IndexNow: ${JSON.stringify(batch)}`);
             try {
                 const response = await fetch("https://www.bing.com/indexnow", {
                     method: "POST",
@@ -44,7 +47,6 @@ const bootstrap = async ({strapi}) => {
         "api::authors.authors",
         "api::blogs.blogs",
         "api::newsletter-submissions.newsletter-submissions",
-        "api::terms-or-policy.terms-or-policy",
         "api::user.user",
         "api::article.article",
         "api::page.page",
@@ -56,6 +58,8 @@ const bootstrap = async ({strapi}) => {
         "api::navigation-menu.navigation-menu",
         "api::newsletter-form.newsletter-form",
         "api::platform.platform",
+        "api::privacy-policy.privacy-policy",
+        "api::terms-of-service.terms-of-service",
         "api::security.security",
         "api::website-homepage.website-homepage",
     ];
