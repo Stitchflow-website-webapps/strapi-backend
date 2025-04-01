@@ -86,7 +86,6 @@ export interface BlogsBlogsHeroSection extends Struct.ComponentSchema {
   attributes: {
     bannerImage: Schema.Attribute.Media<'images' | 'files'>;
     category: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
     isBanner: Schema.Attribute.Boolean;
     isPopularArticle: Schema.Attribute.Boolean;
     modifiedDate: Schema.Attribute.Date;

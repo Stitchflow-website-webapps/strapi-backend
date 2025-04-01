@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "string"
-    },
     "bannerImage": {
       "type": "media",
       "multiple": false,
