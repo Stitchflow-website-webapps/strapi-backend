@@ -370,12 +370,23 @@ const bootstrap = async ({strapi}) => {
     };
 
     const determineSlug = (result, contentType) => {
+        const supportedContentTypes = [
+            "api::blogs.blogs",
+            "api::page.page",
+            // Single types
+            "api::about-page.about-page",
+            "api::platform.platform",
+            "api::integrations.integrations",
+            "api::demo-request-form.demo-request-form",
+            "api::security.security",
+            "api::terms-of-service.terms-of-service",
+            "api::privacy-policy.privacy-policy",
+            "api::website-homepage.website-homepage",
+        ];
         // Skip if this isn't a blog or page that needs URL submission
-        if (!["api::blogs.blogs", "api::page.page"].includes(contentType)) {
+        if (!supportedContentTypes.includes(contentType)) {
             return null;
         }
-
-        let slug = result.urlSlug || result.slug;
 
         const slugMap = {
             "api::about-page.about-page": "about",
@@ -388,11 +399,12 @@ const bootstrap = async ({strapi}) => {
             "api::website-homepage.website-homepage": "",
         };
 
-        if (!slug && slugMap[contentType]) {
-            slug = slugMap[contentType];
+        if (slugMap[contentType]) {
+            const slug = slugMap[contentType];
             strapi.log.info(`📌 Using predefined slug for ${contentType}: ${slug}`);
+            return slug;
         }
-
+        let slug = result.urlSlug || result.slug;
         if (!slug) {
             slug = result.title || result.heading || result.name;
             if (slug) {
@@ -420,7 +432,18 @@ const bootstrap = async ({strapi}) => {
     };
 
     // Only subscribe to content types that need URL submission
-    const contentTypesToSubscribe = ["api::blogs.blogs", "api::page.page"];
+    const contentTypesToSubscribe = [
+        "api::blogs.blogs",
+        "api::page.page",
+        "api::about-page.about-page",
+        "api::platform.platform",
+        "api::integrations.integrations",
+        "api::demo-request-form.demo-request-form",
+        "api::security.security",
+        "api::terms-of-service.terms-of-service",
+        "api::privacy-policy.privacy-policy",
+        "api::website-homepage.website-homepage",
+    ];
 
     contentTypesToSubscribe.forEach((contentType) => {
         strapi.db.lifecycles.subscribe({
