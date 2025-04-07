@@ -246,8 +246,14 @@ const bootstrap = async ({strapi}) => {
                 .replace(/[^a-z0-9-]/g, "");
             }
         }
-        strapi.log.info(`🔍 Final Slug for ${contentType}: ${slug}`);
-        return slug;
+
+        let prefix = "";
+        if (contentType === "api::blogs.blogs") {
+            prefix = "blog/";
+        }
+        const fullSlug = `${prefix}${slug}`;
+        strapi.log.info(`🔍 Final Slug for ${contentType}: ${fullSlug}`);
+        return fullSlug;
     };
 
     const contentTypes = [
@@ -293,7 +299,6 @@ const bootstrap = async ({strapi}) => {
                 const {result} = event;
                 const slug = determineSlug(result, contentType);
 
-                strapi.log.info(`🔍 [DEBUG] Processing update for ${contentType}. Slug: ${slug}`);
                 if (!slug) {
                     strapi.log.warn(`⚠️ Skipping IndexNow submission: No valid slug for ${contentType}`);
                     return;
