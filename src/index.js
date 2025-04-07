@@ -171,6 +171,158 @@
 //      */
 //     bootstrap,
 // };
+
+// "use strict";
+// require("dotenv").config();
+
+// const bootstrap = async ({strapi}) => {
+//     const submitToIndexNow = async (urls) => {
+//         if (!Array.isArray(urls)) {
+//             urls = [urls];
+//         }
+
+//         const key = process.env.INDEXNOW_KEY || "";
+//         const host = "www.stitchflow.com";
+//         if (!key) {
+//             strapi.log.error("❌ INDEXNOW_KEY is missing in environment variables.");
+//             return false;
+//         }
+
+//         const batchSize = 100;
+//         let allSuccess = true;
+//         for (let i = 0; i < urls.length; i += batchSize) {
+//             const batch = urls.slice(i, i + batchSize);
+
+//             try {
+//                 const response = await fetch("https://www.bing.com/indexnow", {
+//                     method: "POST",
+//                     headers: {
+//                         "Content-Type": "application/json",
+//                     },
+//                     body: JSON.stringify({host, key, urlList: batch}),
+//                 });
+//                 const responseBody = await response.text();
+//                 if (response.ok) {
+//                     strapi.log.info(`✅ IndexNow submitted URL: ${batch}`);
+//                 } else {
+//                     strapi.log.error(
+//                         `❌ IndexNow submission failed. Status: ${response.status}. Response: ${responseBody}`
+//                     );
+//                     allSuccess = false;
+//                 }
+//             } catch (error) {
+//                 strapi.log.error("❌ IndexNow submission failed:", error);
+//                 allSuccess = false;
+//             }
+//         }
+//         return allSuccess;
+//     };
+
+//     const determineSlug = (result, contentType) => {
+//         let slug = result.urlSlug || result.slug;
+
+//         const slugMap = {
+//             "api::about-page.about-page": "about",
+//             "api::platform.platform": "platform",
+//             "api::integrations.integrations": "integrations",
+//             "api::demo-request-form.demo-request-form": "schedule-a-demo",
+//             "api::security.security": "security",
+//             "api::terms-of-service.terms-of-service": "terms-of-service",
+//             "api::privacy-policy.privacy-policy": "privacy",
+//             "api::website-homepage.website-homepage": "",
+//         };
+
+//         if (!slug && slugMap[contentType]) {
+//             slug = slugMap[contentType];
+//             strapi.log.info(`📌 Using predefined slug for ${contentType}: ${slug}`);
+//         }
+
+//         if (!slug) {
+//             slug = result.title || result.heading || result.name;
+//             if (slug) {
+//                 slug = slug
+//                 .toLowerCase()
+//                 .trim()
+//                 .replace(/\s+/g, "-")
+//                 .replace(/[^a-z0-9-]/g, "");
+//             }
+//         }
+//         if (!slug) {
+//             return "";
+//         }
+//         let prefix = "";
+//         if (contentType === "api::blogs.blogs") {
+//             prefix = "blog/";
+//         }
+//         const fullSlug = `${prefix}${slug}`;
+//         strapi.log.info(`🔍 Final Slug for ${contentType}: ${fullSlug}`);
+//         return fullSlug;
+//     };
+
+//     const contentTypes = [
+//         "api::authors.authors",
+//         "api::blogs.blogs",
+//         "api::newsletter-submissions.newsletter-submissions",
+//         "api::user.user",
+//         "api::article.article",
+//         "api::page.page",
+//         "api::about-page.about-page",
+//         "api::blog-home.blog-home",
+//         "api::demo-request-form.demo-request-form",
+//         "api::global-footer.global-footer",
+//         "api::integrations.integrations",
+//         "api::navigation-menu.navigation-menu",
+//         "api::newsletter-form.newsletter-form",
+//         "api::platform.platform",
+//         "api::privacy-policy.privacy-policy",
+//         "api::terms-of-service.terms-of-service",
+//         "api::security.security",
+//         "api::website-homepage.website-homepage",
+//     ];
+
+//     contentTypes.forEach((contentType) => {
+//         strapi.db.lifecycles.subscribe({
+//             model: contentType,
+
+//             async afterCreate(event) {
+//                 const {result} = event;
+//                 const slug = determineSlug(result, contentType);
+
+//                 strapi.log.info(`🔍 [DEBUG] Determined Slug for ${contentType}: ${slug}`);
+//                 if (!slug) {
+//                     strapi.log.warn(`⚠️ Skipping IndexNow submission: No valid slug for ${contentType}`);
+//                     return;
+//                 }
+
+//                 const url = `https://www.stitchflow.com/${slug}`;
+//                 await submitToIndexNow(url);
+//             },
+
+//             async afterUpdate(event) {
+//                 const {result} = event;
+//                 const slug = determineSlug(result, contentType);
+
+//                 if (!slug) {
+//                     strapi.log.warn(`⚠️ Skipping IndexNow submission: No valid slug for ${contentType}`);
+//                     return;
+//                 }
+
+//                 const url = `https://www.stitchflow.com/${slug}`;
+//                 strapi.log.info(`📌 Submitting URL to IndexNow: ${url}`);
+
+//                 await submitToIndexNow(url);
+//             },
+//         });
+//     });
+
+//     strapi.log.info("✅ IndexNow lifecycle hooks initialized");
+// };
+
+// module.exports = {
+//     register() {},
+//     bootstrap,
+// };
+
 "use strict";
 require("dotenv").config();
 
@@ -218,6 +370,11 @@ const bootstrap = async ({strapi}) => {
     };
 
     const determineSlug = (result, contentType) => {
+        // Skip if this isn't a blog or page that needs URL submission
+        if (!["api::blogs.blogs", "api::page.page"].includes(contentType)) {
+            return null;
+        }
+
         let slug = result.urlSlug || result.slug;
 
         const slugMap = {
@@ -247,37 +404,25 @@ const bootstrap = async ({strapi}) => {
             }
         }
 
+        if (!slug) {
+            return null;
+        }
+
+        // Only add prefix for blogs
         let prefix = "";
         if (contentType === "api::blogs.blogs") {
             prefix = "blog/";
         }
+
         const fullSlug = `${prefix}${slug}`;
         strapi.log.info(`🔍 Final Slug for ${contentType}: ${fullSlug}`);
         return fullSlug;
     };
 
-    const contentTypes = [
-        "api::authors.authors",
-        "api::blogs.blogs",
-        "api::newsletter-submissions.newsletter-submissions",
-        "api::user.user",
-        "api::article.article",
-        "api::page.page",
-        "api::about-page.about-page",
-        "api::blog-home.blog-home",
-        "api::demo-request-form.demo-request-form",
-        "api::global-footer.global-footer",
-        "api::integrations.integrations",
-        "api::navigation-menu.navigation-menu",
-        "api::newsletter-form.newsletter-form",
-        "api::platform.platform",
-        "api::privacy-policy.privacy-policy",
-        "api::terms-of-service.terms-of-service",
-        "api::security.security",
-        "api::website-homepage.website-homepage",
-    ];
+    // Only subscribe to content types that need URL submission
+    const contentTypesToSubscribe = ["api::blogs.blogs", "api::page.page"];
 
-    contentTypes.forEach((contentType) => {
+    contentTypesToSubscribe.forEach((contentType) => {
         strapi.db.lifecycles.subscribe({
             model: contentType,
 
@@ -285,13 +430,13 @@ const bootstrap = async ({strapi}) => {
                 const {result} = event;
                 const slug = determineSlug(result, contentType);
 
-                strapi.log.info(`🔍 [DEBUG] Determined Slug for ${contentType}: ${slug}`);
                 if (!slug) {
                     strapi.log.warn(`⚠️ Skipping IndexNow submission: No valid slug for ${contentType}`);
                     return;
                 }
 
                 const url = `https://www.stitchflow.com/${slug}`;
+                strapi.log.info(`📌 [CREATE] Submitting URL to IndexNow: ${url}`);
                 await submitToIndexNow(url);
             },
 
@@ -305,8 +450,7 @@ const bootstrap = async ({strapi}) => {
                 }
 
                 const url = `https://www.stitchflow.com/${slug}`;
-                strapi.log.info(`📌 Submitting URL to IndexNow: ${url}`);
-
+                strapi.log.info(`📌 [UPDATE] Submitting URL to IndexNow: ${url}`);
                 await submitToIndexNow(url);
             },
         });
