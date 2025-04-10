@@ -17,7 +17,6 @@
         "@ckeditor/ckeditor5-build-classic": "^44.2.1",
         "@ckeditor/ckeditor5-react": "^9.5.0",
         "@strapi/plugin-cloud": "5.8.0",
-        "@strapi/plugin-seo": "^2.0.6",
         "@strapi/plugin-users-permissions": "5.8.0",
         "@strapi/strapi": "5.8.0",
         "better-sqlite3": "11.3.0",
