@@ -24,9 +24,6 @@
         "images"
       ]
     },
-    "googleVerification": {
-      "type": "string"
-    },
     "url": {
       "type": "string"
     }
