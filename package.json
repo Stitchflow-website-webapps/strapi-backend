@@ -18,6 +18,7 @@
         "@ckeditor/ckeditor5-react": "^9.5.0",
         "@strapi/plugin-cloud": "5.8.0",
         "@strapi/plugin-users-permissions": "5.8.0",
+        "@strapi/provider-upload-cloudinary": "^5.12.4",
         "@strapi/strapi": "5.8.0",
         "better-sqlite3": "11.3.0",
         "ckeditor5": "^44.2.1",
