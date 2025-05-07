@@ -14,6 +14,7 @@ module.exports = [
                 "https://website-euq1zdktb-websitestitchflowios-projects.vercel.app",
                 "https://staging-web.stitchflow.com",
                 "https://dev-web.stitchflow.com",
+                "https://stichflow-version2.vercel.app",
             ], // Add your frontend domain
             methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         },
